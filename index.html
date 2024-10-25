@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GABIAM Kossi Samuel - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #333;
+            --bg-color: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        html {
+    scroll-behavior: smooth;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(to right, #2563eb, #1e40af);
+            color: white;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Sections communes */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Formation */
+        .education {
+            background-color: white;
+        }
+
+        .education-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .year {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            font-style: italic;
+            color: #666;
+        }
+
+            /* Compétences */
+        .skills {
+            padding: 60px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+
+        .about, .skills, .experience, .projects {
+            background-color: white;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .education-item {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête existant -->
+    <header>
+        <nav class="container">
+            <h2 id="scrollToTop">GABIAM K.S</h2>
+
+            <div class="nav-links">
+                <a href="#about">À propos</a>
+                <a href="#education">Formation</a>
+                <a href="#skills">Compétences</a>
+                <a href="#experience">Expérience</a>
+                <a href="#projects">Projets</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Hero existante -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <h1>GABIAM Kossi Samuel</h1>
+                <p>Développeur Full Stack & Expert Big Data</p>
+                <div class="contact-info">
+                    <a href="mailto:Gabima.k.samuel@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        Gabima.k.samuel@gmail.com
+                    </a>
+                    <a href="mailto: kossisamuel.gabiam@fss.u-sfax.tn">
+                        <i class="fa-regular fa-envelope"></i>
+                        kossisamuel.gabiam@fss.u-sfax.tn
+                    </a>
+                    <a href="tel:+21651660249">
+                        <i class="fas fa-phone"></i>
+                        +216 51 660 249 / +216 94 560 249
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Sfax, Tunisie 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos existante -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <p>Développeur Full Stack passionné par les nouvelles technologies et spécialisé dans le développement d'applications web et mobiles innovantes. Fort d'une expertise en intégration Big Data et en architecture cloud, je combine créativité technique et vision stratégique pour délivrer des solutions performantes.</p>
+        </div>
+    </section>
+
+    <!-- Nouvelle section Formation -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Formation</h2>
+            
+            <div class="education-item">
+                <h3>Mastère Professionnel en Systèmes et Réseaux Cloud Computing</h3>
+                <div class="year">2022 – 2024</div>
+                <div class="institution">Faculté des Sciences de Sfax, Département Informatique</div>
+            </div>
+
+            <div class="education-item">
+                <h3>Licence en Sciences de l'Informatique</h3>
+                <div class="year">2018 – 2021</div>
+                <div class="institution">Faculté des Sciences de Sfax, Département Informatique</div>
+            </div>
+
+            <div class="education-item">
+                <h3>Baccalauréat en Sciences Expérimentales, Série D</h3>
+                <div class="year">2014 – 2017</div>
+                <div class="institution">Lycée La Grâce de Sokodé, Région Centrale</div>
+            </div>
+
+            <div class="education-item">
+                <h3>BEPC : Brevet d'Études du Premier Cycle</h3>
+                <div class="year">2010 – 2014</div>
+                <div class="institution">Lycée La Grâce de Sokodé, Région Centrale</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sections existantes (Skills, Experience, Projects) -->
+ <!--    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Compétences et outils</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><i class="fas fa-database"></i> Big Data</h3> 
+                    <p>Hadoop, ElasticSearch (ELK), Spark, Kafka, HBase, Cassandra</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-code"></i> Développement Web</h3>
+                    <p>HTML, CSS, JavaScript, TypeScript, PHP, MySQL, Angular, React, Vue</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Développement Mobile</h3>
+                    <p>Android Studio, Flutter, React Native</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <p>Docker, OpenStack, Azure, AWS, Google Cloud Platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ -->
+<!-- Sections existantes (Skills, Experience, Projects) -->
+<section id="skills" class="skills">
+    <div class="container">
+        <h2>Compétences et outils</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-database"></i> Big Data</h3> 
+                <p>Hadoop, ElasticSearch (ELK), Spark, Kafka, HBase, Hive, Pig, Cassandra, MapReduce, Zookeeper</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-code"></i> Développement Web</h3>
+                <p>HTML, CSS, JavaScript, TypeScript, PHP, MySQL, Tailwind CSS, Angular, React, Vue</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-mobile-alt"></i> Ingénierie Logiciel et Mobile</h3>
+                <p>Java, Python, C, C#, Android Studio, Flutter</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-network-wired"></i> Ingénierie des Infrastructures Réseaux et Cloud</h3>
+                <p>CCNA, HCNA, Packet Tracer, Marionnet, Wireshark, Linux, Windows, macOS, VirtualBox, VMware</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                <p>Docker, OpenNebula, OpenStack, Microsoft Azure, AWS, Google Cloud Platform</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-project-diagram"></i> Modélisation</h3>
+                <p>UML, SysML</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Expérience Professionnelle</h2>
+            <div class="experience-item">
+                <h3><i class="fa-solid fa-hand-point-right"></i>   Développeur Full Stack | Djagora (2024)</h3>
+                <p>Application Web et Mobile de Gestion de Stage</p>
+                <ul>
+                    <li>Développement d'applications web avec React et NodeJs/MySQL</li>
+                    <li>Développement mobile avec React Native Expo</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3> <i class="fa-solid fa-hand-point-right"></i> Développeur Full Stack & Intégration Big Data | DK-Soft (2021)</h3>
+                <p>Architecture Big Data et développement web</p>
+                <ul>
+                    <li>Mise en place d'architecture Hadoop et Spark</li>
+                    <li>Implémentation stack ELK</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   <!--  <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projets Réalisés</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Application de Gestion de Stage</h3>
+                    <p>Plateforme web et mobile pour la gestion des stages</p>
+                    <p><a href="https://pfe2024.onrender.com/" target="_blank"><i class="fa-solid fa-laptop"></i> Voir la démo</a></p>
+                    <p><a href="https://github.com/Shieldish/PFE--.git" target="_blank"> <i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                    <p><a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank"> <i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                </div>
+                <div class="project-card">
+                    <h3>Extraction et Visualisation de Données</h3>
+                    <p>Application d'analyse des données des réseaux sociaux</p>
+                    <p>  <a href="https://github.com/Shieldish/test.git" target="_blank"> <i class="fab fa-github"> </i> Voir sur GitHub</a></p>
+                    <p>  <a href="https://github.com/Shieldish/Api-test" target="_blank"> <i class="fab fa-github"> </i> Voir sur GitHub</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projets Réalisés</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Application de Gestion de Stage</h3>
+                    <p>Plateforme web et mobile pour la gestion des stages</p>
+                    <p><a href="https://pfe2024.onrender.com/" target="_blank"><i class="fa-solid fa-laptop"></i> Voir la démo</a></p>
+                    <p><a href="https://github.com/Shieldish/PFE--.git" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                    <p><a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                </div>
+                <div class="project-card">
+                    <h3>Extraction et Visualisation de Données</h3>
+                    <p>Application d'analyse des données des réseaux sociaux</p>
+                    <p><a href="https://github.com/Shieldish/test.git" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                    <p><a href="https://github.com/Shieldish/Api-test" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+    <style>
+    
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .project-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .project-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #007bff;
+    }
+    
+    .project-card p {
+        margin: 10px 0;
+        color: #555;
+    }
+    
+    .project-card a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    .project-card a:hover {
+        text-decoration: underline;
+    }
+    
+    .project-card i {
+        margin-right: 5px;
+    }
+    </style>
+
+ <!--    <footer>
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="social-links">
+                <a href="https://github.com/Shieldish" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer> -->
+    <footer>
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="social-links">
+                <a href="https://github.com/Shieldish" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 GABIAM kossi Samuel. All Rights Reserved.</p>
+        </div>
+    </footer>
+                      <style>
+                        footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff; /* Change to your desired hover color */
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+                      </style>    
+</body>
+</html>
+
+<script>
+    document.getElementById("scrollToTop").addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Adds smooth scrolling effect
+        });
+    });
+</script>
