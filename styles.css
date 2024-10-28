@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-color: #333;
-    --bg-color: #f3f4f6;
+    --primary-color: #16a34a; /* Fresh, natural green */
+    --secondary-color: #d97706; /* Deep amber orange */
+    --text-color: #3d3d3d; /* Neutral dark gray for readability */
+    --bg-color: #f3f4f6;/* Soft beige for a gentle background */
+    
 }
 
 * {
