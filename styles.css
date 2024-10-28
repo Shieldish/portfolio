@@ -176,7 +176,7 @@ section h2::after {
 }
 
 .skill-card:hover {
-    background-color: rgb(220, 219, 219);
+    background-color:beige;
     transform: scale(1.05);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
