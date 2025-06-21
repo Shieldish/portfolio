@@ -881,40 +881,110 @@
     });
 </script>
 
-
-
+<!-- 
 <script>
 (async () => {
   try {
     const res = await fetch("https://ipapi.co/json/");
     const data = await res.json();
 
+    // Extract browser name from userAgent
+    function getBrowserName(userAgent) {
+      if (userAgent.includes("Firefox")) return "Firefox";
+      if (userAgent.includes("Edg")) return "Edge";
+      if (userAgent.includes("Chrome")) return "Chrome";
+      if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Safari";
+      if (userAgent.includes("Opera") || userAgent.includes("OPR")) return "Opera";
+      return "Unknown";
+    }
+
+    const ua = navigator.userAgent;
     const payload = {
       ip: data.ip,
       city: data.city,
       region: data.region,
       country: data.country_name,
-      time: new Date().toLocaleString()
+      time: new Date().toLocaleString(),
+      platform: navigator.platform,
+      os: ua,
+      browser: getBrowserName(ua),
+      language: navigator.language
     };
 
-    // Replace with your own Google Apps Script URL
-    await fetch("https://script.google.com/macros/s/AKfycbzWeKyR51bvOEgKy7yewN_XivhULsigVBwVWKfy1SgxvcXM8KqIryqA9FdYAAz-1O89/exec", {
+    console.log("Payload to send:", payload);
+
+    await fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
       method: "POST",
-      mode: "no-cors", // prevents CORS error
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
     });
 
-    console.log("Visitor info sent to Google Sheet:", payload);
+    console.log("✅ Données envoyées au Google Sheet !");
   } catch (err) {
-    console.error("Error sending visitor data:", err);
+    console.error("❌ Erreur:", err);
   }
 })();
 </script>
+ -->
 
 
+
+ <script>
+(async () => {
+  try {
+    // Step 1: Get IPv4
+    const ipRes = await fetch("https://api.ipify.org?format=json");
+    const ipData = await ipRes.json();
+    const ipv4 = ipData.ip;
+
+    // Step 2: Get geo info based on IP (still uses ipapi.co)
+    const geoRes = await fetch("https://ipapi.co/" + ipv4 + "/json/");
+    const geo = await geoRes.json();
+
+    // Detect browser from userAgent
+    function getBrowserName(ua) {
+      if (ua.includes("Firefox")) return "Firefox";
+      if (ua.includes("Edg")) return "Edge";
+      if (ua.includes("Chrome")) return "Chrome";
+      if (ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+      if (ua.includes("OPR") || ua.includes("Opera")) return "Opera";
+      return "Unknown";
+    }
+
+    const ua = navigator.userAgent;
+    const payload = {
+      ip: ipv4,
+      city: geo.city,
+      region: geo.region,
+      country: geo.country_name,
+      time: new Date().toLocaleString(),
+      platform: navigator.platform,
+      os: ua,
+      browser: getBrowserName(ua),
+      language: navigator.language
+    };
+
+    console.log("Payload to send:", payload);
+
+    // Send to Google Apps Script
+    await fetch("https://script.google.com/macros/s/AKfycbzWeKyR51bvOEgKy7yewN_XivhULsigVBwVWKfy1SgxvcXM8KqIryqA9FdYAAz-1O89/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    //console.log("✅ Visitor info sent to Google Sheet!");
+  } catch (err) {
+   // console.error("❌ Tracking error:", err);
+  }
+})();
+</script>
 
 
 <script>
