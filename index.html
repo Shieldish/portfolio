@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +39,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -46,8 +47,15 @@
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
         }
 
         .hex-pattern {
@@ -83,10 +91,23 @@
         }
 
         @keyframes float {
-            0% { transform: translateX(-100px); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateX(100vw); opacity: 0; }
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(100vw);
+                opacity: 0;
+            }
         }
 
         .particles {
@@ -109,12 +130,15 @@
                 transform: translateY(100vh) translateX(0px);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-50px) translateX(100px);
                 opacity: 0;
@@ -221,8 +245,15 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .hero p {
@@ -565,23 +596,23 @@
             .nav-links {
                 display: none;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.2rem;
             }
-            
+
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .project-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .contact-info {
                 flex-direction: column;
             }
@@ -598,23 +629,47 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -3;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            pointer-events: none;
+        }
     </style>
 </head>
+
 <body>
     <!-- Animated Background -->
     <div class="animated-bg">
+
+        <canvas id="matrix-canvas"></canvas>
+        <div class="hex-pattern"></div>
+        <div class="grid-overlay"></div>
+
+
         <div class="hex-pattern"></div>
         <div class="grid-overlay"></div>
         <div class="particles"></div>
         <div class="code-fragments">
-            <div class="code-line" style="top: 10%; animation-delay: 0s;">function createAwesome() { return true; }</div>
-            <div class="code-line" style="top: 20%; animation-delay: 2s;">const developer = { passion: 'infinite', coffee: 'required' };</div>
+            <div class="code-line" style="top: 10%; animation-delay: 0s;">function createAwesome() { return true; }
+            </div>
+            <div class="code-line" style="top: 20%; animation-delay: 2s;">const developer = { passion: 'infinite',
+                coffee: 'required' };</div>
             <div class="code-line" style="top: 30%; animation-delay: 4s;">while(coding) { innovation++; }</div>
             <div class="code-line" style="top: 40%; animation-delay: 6s;">git commit -m "Another step forward"</div>
             <div class="code-line" style="top: 50%; animation-delay: 8s;">npm install --save creativity</div>
-            <div class="code-line" style="top: 60%; animation-delay: 10s;">if (idea) { code(); deploy(); celebrate(); }</div>
-            <div class="code-line" style="top: 70%; animation-delay: 12s;">const future = await buildSomethingAmazing();</div>
-            <div class="code-line" style="top: 80%; animation-delay: 14s;">console.log('Hello, World of Possibilities!');</div>
+            <div class="code-line" style="top: 60%; animation-delay: 10s;">if (idea) { code(); deploy(); celebrate(); }
+            </div>
+            <div class="code-line" style="top: 70%; animation-delay: 12s;">const future = await buildSomethingAmazing();
+            </div>
+            <div class="code-line" style="top: 80%; animation-delay: 14s;">console.log('Hello, World of
+                Possibilities!');</div>
         </div>
     </div>
 
@@ -635,7 +690,9 @@
         <div class="container hero-content">
             <div>
                 <h1>GABIAM K. Samuel</h1>
-                <p>Développeur Full Stack & Mobile | Expert en Intégration Big Data | Ingénieur en Infrastructures Réseaux & Cloud</p>
+                <p>Mastère en ingénierie des systèmes informatiques | Réseaux , Cloud Computing | Développement
+                    fullstack et mobile | Passionné par l’optimisation et la transformation digitale , disponible pour
+                    projets IT innovants</p>
                 <div class="contact-info">
                     <a href="mailto:Gabima.k.samuel@gmail.com">
                         <i class="fas fa-envelope"></i>
@@ -658,12 +715,20 @@
         </div>
     </section>
 
-    <section id="about" class="about fade-in">
-        <div class="container">
-            <h2>À Propos de Moi</h2>
-            <p>Professionnel IT spécialisé en Systèmes, Réseaux et Cloud. Expérience en développement web/mobile, Big Data et IA. Actif en hackathons et projets open source, avec une forte passion pour la veille technologique et l'apprentissage autonome.</p>
-        </div>
-    </section>
+   <section id="about" class="about fade-in">
+    <div class="container">
+        <h2>À Propos de Moi</h2>
+        <p>
+            Je m'appelle <strong>GABIAM Kossi Samuel</strong>, passionné par les technologies IT et spécialisé en <strong>Systèmes, Réseaux et Cloud</strong>. 
+            Fort d'une expérience dans le développement <strong>web et mobile</strong>, ainsi que dans les domaines du <strong>Big Data</strong> et de <strong>l'Intelligence Artificielle</strong>, 
+            je suis constamment à la recherche de nouveaux défis techniques. 
+            Actif dans les <strong>hackathons</strong> et les <strong>projets open source</strong>, je me distingue par ma curiosité, ma rigueur, 
+            et ma passion pour la <strong>veille technologique</strong> et l'<strong>apprentissage autonome</strong>. 
+            Mon objectif est de contribuer à des projets innovants et d’évoluer dans des environnements stimulants, collaboratifs et tournés vers l’avenir.
+        </p>
+    </div>
+</section>
+
 
     <section id="education" class="education fade-in">
         <div class="container">
@@ -696,7 +761,7 @@
             <h2>Compétences et outils</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3><i class="fas fa-database"></i> Big Data</h3> 
+                    <h3><i class="fas fa-database"></i> Big Data</h3>
                     <p>Hadoop, ElasticSearch (ELK), Spark, Kafka, HBase, Hive, Pig, Cassandra, MapReduce, Zookeeper</p>
                 </div>
                 <div class="skill-card">
@@ -735,7 +800,8 @@
                 </ul>
             </div>
             <div class="experience-item">
-                <h3><i class="fa-solid fa-hand-point-right"></i> Développeur Full Stack & Intégration Big Data | DK-Soft (2021)</h3>
+                <h3><i class="fa-solid fa-hand-point-right"></i> Développeur Full Stack & Intégration Big Data | DK-Soft
+                    (2021)</h3>
                 <p>Architecture Big Data et développement web</p>
                 <ul>
                     <li>Mise en place d'architecture Hadoop et Spark</li>
@@ -752,15 +818,20 @@
                 <div class="project-card">
                     <h3>Application de Gestion de Stage</h3>
                     <p>Plateforme web et mobile pour la gestion des stages</p>
-                    <p><a href="https://pfe2024.onrender.com/" target="_blank"><i class="fa-solid fa-laptop"></i> Voir la démo</a></p>
-                    <p><a href="https://github.com/Shieldish/PFE--.git" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
-                    <p><a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                    <p><a href="https://pfe2024.onrender.com/" target="_blank"><i class="fa-solid fa-laptop"></i> Voir
+                            la démo</a></p>
+                    <p><a href="https://github.com/Shieldish/PFE--.git" target="_blank"><i class="fab fa-github"></i>
+                            Voir sur GitHub</a></p>
+                    <p><a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank"><i
+                                class="fab fa-github"></i> Voir sur GitHub</a></p>
                 </div>
                 <div class="project-card">
                     <h3>Extraction et Visualisation de Données</h3>
                     <p>Application d'analyse des données des réseaux sociaux</p>
-                    <p><a href="https://github.com/Shieldish/test.git" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
-                    <p><a href="https://github.com/Shieldish/Api-test" target="_blank"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+                    <p><a href="https://github.com/Shieldish/test.git" target="_blank"><i class="fab fa-github"></i>
+                            Voir sur GitHub</a></p>
+                    <p><a href="https://github.com/Shieldish/Api-test" target="_blank"><i class="fab fa-github"></i>
+                            Voir sur GitHub</a></p>
                 </div>
             </div>
         </div>
@@ -782,30 +853,82 @@
         </div> <!-- end of .container in footer -->
     </footer>
 </body>
+
 </html>
 
 <script>
-  const particlesContainer = document.querySelector('.particles');
-  for (let i = 0; i < 100; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.top = `${Math.random() * 100}%`;
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.animationDelay = `${Math.random() * 15}s`;
-    particlesContainer.appendChild(particle);
-  }
+    const particlesContainer = document.querySelector('.particles');
+    for (let i = 0; i < 100; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 15}s`;
+        particlesContainer.appendChild(particle);
+    }
 </script>
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
     });
-  });
 
-  document.querySelectorAll('.fade-in').forEach(section => {
-    observer.observe(section);
-  });
+    document.querySelectorAll('.fade-in').forEach(section => {
+        observer.observe(section);
+    });
 </script>
 
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas to full screen
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        setCanvasSize();
+        window.addEventListener('resize', setCanvasSize);
+
+        const letters = '01∑∆ΦΩæµ£¢∞¥¢@#&<>[]{}|=+*/ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワabcdefghijklmopqrstuvwxyz';
+        const fontSize = 16;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = new Array(columns).fill(1);
+
+        function drawMatrix() {
+            // Dark transparent background for trail effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Set neon-like gradient color
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#00ffff');
+            gradient.addColorStop(0.5, '#ff00ff');
+            gradient.addColorStop(1, '#00ffff');
+            ctx.fillStyle = '#0f0';
+
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 35);
+    });
+</script>
