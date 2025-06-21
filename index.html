@@ -883,6 +883,39 @@
 
 
 
+<script>
+(async () => {
+  try {
+    const res = await fetch("https://ipapi.co/json/");
+    const data = await res.json();
+
+    const payload = {
+      ip: data.ip,
+      city: data.city,
+      region: data.region,
+      country: data.country_name,
+      time: new Date().toLocaleString()
+    };
+
+    // Replace with your own Google Apps Script URL
+    await fetch("https://script.google.com/macros/s/AKfycbzWeKyR51bvOEgKy7yewN_XivhULsigVBwVWKfy1SgxvcXM8KqIryqA9FdYAAz-1O89/exec", {
+      method: "POST",
+      mode: "no-cors", // prevents CORS error
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    console.log("Visitor info sent to Google Sheet:", payload);
+  } catch (err) {
+    console.error("Error sending visitor data:", err);
+  }
+})();
+</script>
+
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
