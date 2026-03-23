@@ -7,6 +7,10 @@
     <title>GABIAM Kossi Samuel - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        html {
+  scroll-behavior: smooth;
+}
+ 
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background Elements */
+        /* Simplified Background - Only Essential Elements */
         .animated-bg {
             position: fixed;
             top: 0;
@@ -40,76 +44,19 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
-            animation: gridPulse 4s ease-in-out infinite;
+            opacity: 0.3;
+            animation: gridPulse 8s ease-in-out infinite;
         }
 
         @keyframes gridPulse {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 0.6;
-            }
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.4; }
         }
 
-        .hex-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ffff' fill-opacity='0.05'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-
-        .code-fragments {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .code-line {
-            position: absolute;
-            color: rgba(0, 255, 255, 0.4);
-            font-size: 14px;
-            font-family: 'Courier New', monospace;
-            white-space: nowrap;
-            animation: float 20s linear infinite;
-        }
-
-        .code-line:nth-child(odd) {
-            color: rgba(255, 100, 255, 0.4);
-        }
-
-        .code-line:nth-child(3n) {
-            color: rgba(100, 255, 100, 0.4);
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateX(-100px);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateX(100vw);
-                opacity: 0;
-            }
-        }
-
+        /* Reduced particles count and simplified animation */
         .particles {
             position: absolute;
             width: 100%;
@@ -122,7 +69,7 @@
             height: 2px;
             background: #00ffff;
             border-radius: 50%;
-            animation: particleMove 15s linear infinite;
+            animation: particleMove 20s linear infinite;
         }
 
         @keyframes particleMove {
@@ -130,19 +77,25 @@
                 transform: translateY(100vh) translateX(0px);
                 opacity: 0;
             }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
             100% {
-                transform: translateY(-50px) translateX(100px);
+                transform: translateY(-50px) translateX(50px);
                 opacity: 0;
             }
+        }
+
+        /* Optimized Matrix Canvas */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -3;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            pointer-events: none;
+            opacity: 0.6;
         }
 
         /* Portfolio Styles */
@@ -154,7 +107,7 @@
 
         header {
             background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             position: fixed;
             width: 100%;
             top: 0;
@@ -172,14 +125,13 @@
         nav h2 {
             color: #00ffff;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
             font-size: 1.5rem;
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         nav h2:hover {
             transform: scale(1.05);
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
         }
 
         .nav-links {
@@ -209,7 +161,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            background: #00ffff;
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -239,21 +191,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift 3s ease-in-out infinite;
+            animation: gradientShift 6s ease-in-out infinite;
             text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
             margin-bottom: 1rem;
         }
 
         @keyframes gradientShift {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .hero p {
@@ -285,7 +230,6 @@
         .contact-info a:hover {
             background: rgba(0, 255, 255, 0.2);
             transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
         }
 
         .contact-info i {
@@ -323,7 +267,7 @@
 
         .about {
             background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 15px;
             margin: 2rem 0;
@@ -340,35 +284,18 @@
 
         .education-item {
             background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .education-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .education-item:hover::before {
-            opacity: 1;
-        }
-
         .education-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
         }
 
         .education-item h3 {
@@ -395,34 +322,17 @@
 
         .skill-card {
             background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 15px;
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .skill-card:hover::before {
-            opacity: 1;
-        }
-
         .skill-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+            transform: translateY(-10px);
         }
 
         .skill-card h3 {
@@ -446,17 +356,16 @@
 
         .experience-item {
             background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .experience-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
         }
 
         .experience-item h3 {
@@ -488,34 +397,17 @@
 
         .project-card {
             background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 15px;
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
         .project-card:hover {
-            transform: translateY(-15px) rotate(2deg);
-            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.4);
+            transform: translateY(-10px);
         }
 
         .project-card h3 {
@@ -547,12 +439,11 @@
         .project-card a:hover {
             background: rgba(255, 0, 255, 0.2);
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
         }
 
         footer {
             background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border-top: 1px solid rgba(0, 255, 255, 0.2);
             padding: 3rem 0;
             text-align: center;
@@ -582,8 +473,7 @@
         }
 
         .social-links a:hover {
-            transform: scale(1.2) rotate(360deg);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
+            transform: scale(1.2);
             background: rgba(0, 255, 255, 0.2);
         }
 
@@ -616,6 +506,11 @@
             .contact-info {
                 flex-direction: column;
             }
+
+            /* Disable heavy effects on mobile */
+            .animated-bg {
+                display: none;
+            }
         }
 
         /* Scroll Animation */
@@ -630,47 +525,23 @@
             transform: translateY(0);
         }
 
-
-        #matrix-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -3;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            pointer-events: none;
+        /* Performance optimization for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Animated Background -->
+    <!-- Simplified Animated Background -->
     <div class="animated-bg">
-
         <canvas id="matrix-canvas"></canvas>
-        <div class="hex-pattern"></div>
-        <div class="grid-overlay"></div>
-
-
-        <div class="hex-pattern"></div>
         <div class="grid-overlay"></div>
         <div class="particles"></div>
-        <div class="code-fragments">
-            <div class="code-line" style="top: 10%; animation-delay: 0s;">function createAwesome() { return true; }
-            </div>
-            <div class="code-line" style="top: 20%; animation-delay: 2s;">const developer = { passion: 'infinite',
-                coffee: 'required' };</div>
-            <div class="code-line" style="top: 30%; animation-delay: 4s;">while(coding) { innovation++; }</div>
-            <div class="code-line" style="top: 40%; animation-delay: 6s;">git commit -m "Another step forward"</div>
-            <div class="code-line" style="top: 50%; animation-delay: 8s;">npm install --save creativity</div>
-            <div class="code-line" style="top: 60%; animation-delay: 10s;">if (idea) { code(); deploy(); celebrate(); }
-            </div>
-            <div class="code-line" style="top: 70%; animation-delay: 12s;">const future = await buildSomethingAmazing();
-            </div>
-            <div class="code-line" style="top: 80%; animation-delay: 14s;">console.log('Hello, World of
-                Possibilities!');</div>
-        </div>
     </div>
 
     <header>
@@ -691,7 +562,7 @@
             <div>
                 <h1>GABIAM K. SAMUEL</h1>
                 <p>Mastère en ingénierie des systèmes informatiques | Réseaux , Cloud Computing | Développement
-                    fullstack et mobile | Passionné par l’optimisation et la transformation digitale , disponible pour
+                    fullstack et mobile | Passionné par l'optimisation et la transformation digitale , disponible pour
                     projets IT innovants</p>
                 <div class="contact-info">
                     <a href="mailto:Gabima.k.samuel@gmail.com">
@@ -715,20 +586,19 @@
         </div>
     </section>
 
-   <section id="about" class="about fade-in">
-    <div class="container">
-        <h2>À Propos de Moi</h2>
-        <p>
-            Je m'appelle <strong>GABIAM Kossi Samuel</strong>, passionné par les technologies IT et spécialisé en <strong>Systèmes, Réseaux et Cloud</strong>. 
-            Fort d'une expérience dans le développement <strong>web et mobile</strong>, ainsi que dans les domaines du <strong>Big Data</strong> et de <strong>l'Intelligence Artificielle</strong>, 
-            je suis constamment à la recherche de nouveaux défis techniques. 
-            Actif dans les <strong>hackathons</strong> et les <strong>projets open source</strong>, je me distingue par ma curiosité, ma rigueur, 
-            et ma passion pour la <strong>veille technologique</strong> et l'<strong>apprentissage autonome</strong>. 
-            Mon objectif est de contribuer à des projets innovants et d’évoluer dans des environnements stimulants, collaboratifs et tournés vers l’avenir.
-        </p>
-    </div>
-</section>
-
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <p>
+                Je m'appelle <strong>GABIAM Kossi Samuel</strong>, passionné par les technologies IT et spécialisé en <strong>Systèmes, Réseaux et Cloud</strong>. 
+                Fort d'une expérience dans le développement <strong>web et mobile</strong>, ainsi que dans les domaines du <strong>Big Data</strong> et de <strong>l'Intelligence Artificielle</strong>, 
+                je suis constamment à la recherche de nouveaux défis techniques. 
+                Actif dans les <strong>hackathons</strong> et les <strong>projets open source</strong>, je me distingue par ma curiosité, ma rigueur, 
+                et ma passion pour la <strong>veille technologique</strong> et l'<strong>apprentissage autonome</strong>. 
+                Mon objectif est de contribuer à des projets innovants et d'évoluer dans des environnements stimulants, collaboratifs et tournés vers l'avenir.
+            </p>
+        </div>
+    </section>
 
     <section id="education" class="education fade-in">
         <div class="container">
@@ -850,38 +720,41 @@
             </div>
             <p>&copy; 2024 GABIAM kossi Samuel. All Rights Reserved.</p>
         </div>
-        </div> <!-- end of .container in footer -->
     </footer>
-</body>
 
-</html>
+    <!-- Optimized Scripts -->
+    <script>
+        // Reduced particle count for better performance
+        const particlesContainer = document.querySelector('.particles');
+        const particleCount = window.innerWidth < 768 ? 20 : 50; // Fewer particles on mobile
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 20}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 
-<script>
-    const particlesContainer = document.querySelector('.particles');
-    for (let i = 0; i < 100; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.top = `${Math.random() * 100}%`;
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.animationDelay = `${Math.random() * 15}s`;
-        particlesContainer.appendChild(particle);
-    }
-</script>
-<script>
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+    <script>
+        // Optimized intersection observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
         });
-    });
+    </script>
 
-    document.querySelectorAll('.fade-in').forEach(section => {
-        observer.observe(section);
-    });
-</script>
-
-
+    
  <script>
 (async () => {
   try {
@@ -917,7 +790,7 @@
       language: navigator.language
     };
 
-    console.log("Payload to send:", payload);
+    //console.log("Payload to send:", payload);
 
     // Send to Google Apps Script
     await fetch("https://script.google.com/macros/s/AKfycbzWeKyR51bvOEgKy7yewN_XivhULsigVBwVWKfy1SgxvcXM8KqIryqA9FdYAAz-1O89/exec", {
@@ -929,20 +802,32 @@
       body: JSON.stringify(payload)
     });
 
-    //console.log("✅ Visitor info sent to Google Sheet!");
+    //console.log("Visitor info sent to Google Sheet!");
   } catch (err) {
-   // console.error("❌ Tracking error:", err);
+   // console.error(" Tracking error:", err);
   }
 })();
 </script>
 
 
-<script>
+ <script>
+    // Optimized Matrix Effect with Performance Controls
     document.addEventListener("DOMContentLoaded", () => {
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
+        let animationId;
+        let isVisible = true;
 
-        // Set canvas to full screen
+        // Performance optimization - pause when tab is not visible
+        document.addEventListener('visibilitychange', () => {
+            isVisible = !document.hidden;
+            if (isVisible) {
+                animate();
+            } else {
+                cancelAnimationFrame(animationId);
+            }
+        });
+
         function setCanvasSize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -951,23 +836,34 @@
         setCanvasSize();
         window.addEventListener('resize', setCanvasSize);
 
-        const letters = '01∑∆ΦΩæµ£¢∞¥¢@#&<>[]{}|=+*/ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワabcdefghijklmopqrstuvwxyz';
+        const letters = '01ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワ';
         const fontSize = 16;
-        const columns = Math.floor(canvas.width / fontSize);
-        const drops = new Array(columns).fill(1);
+        let columns, drops;
 
-        function drawMatrix() {
+        function initMatrix() {
+            columns = Math.floor(canvas.width / fontSize);
+            drops = new Array(columns).fill(1);
+        }
+
+        initMatrix();
+        window.addEventListener('resize', initMatrix);
+
+        let lastTime = 0;
+        const targetFPS = 15;
+        const frameDelay = 1000 / targetFPS;
+
+        function drawMatrix(currentTime) {
+            if (currentTime - lastTime < frameDelay) {
+                animationId = requestAnimationFrame(drawMatrix);
+                return;
+            }
+            lastTime = currentTime;
+
             // Dark transparent background for trail effect
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Set neon-like gradient color
-            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#00ffff');
-            gradient.addColorStop(0.5, '#ff00ff');
-            gradient.addColorStop(1, '#00ffff');
             ctx.fillStyle = '#0f0';
-
             ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < drops.length; i++) {
@@ -977,11 +873,19 @@
                 if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
-
                 drops[i]++;
+            }
+
+            if (isVisible) {
+                animationId = requestAnimationFrame(drawMatrix);
             }
         }
 
-        setInterval(drawMatrix, 35);
+        function animate() {
+            cancelAnimationFrame(animationId); // prevent duplicate loops
+            animationId = requestAnimationFrame(drawMatrix);
+        }
+
+        animate();
     });
 </script>
