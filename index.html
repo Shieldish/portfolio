@@ -8,14 +8,23 @@
     <meta name="theme-color" content="#0a0a0f" />
     <script>
       (() => {
+        const storageKey = 'portfolio-theme';
+        let savedTheme;
+
         try {
-          const savedTheme = localStorage.getItem('portfolio-theme');
-          const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-          const theme = savedTheme || (prefersLight ? 'light' : 'dark');
-          document.documentElement.dataset.theme = theme;
+          savedTheme = localStorage.getItem(storageKey);
         } catch {
-          document.documentElement.dataset.theme = 'dark';
+          savedTheme = null;
         }
+
+        const prefersLight = window.matchMedia?.('(prefers-color-scheme: light)')?.matches;
+        const theme = ['dark', 'light'].includes(savedTheme)
+          ? savedTheme
+          : prefersLight
+            ? 'light'
+            : 'dark';
+
+        document.documentElement.dataset.theme = theme;
       })();
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
