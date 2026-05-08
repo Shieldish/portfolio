@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GABIAM Kossi Samuel - Portfolio & CV</title>
     <meta name="description" content="Portfolio de GABIAM Kossi Samuel — Développeur Fullstack & Mobile, Architecte Cloud & Réseaux. Découvrez mes projets, compétences et mon CV interactif." />
+    <meta name="theme-color" content="#0a0a0f" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('portfolio-theme');
+          const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+          const theme = savedTheme || (prefersLight ? 'light' : 'dark');
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -25,9 +38,14 @@
           <li><a href="#projects">Projets</a></li>
           <li><a href="#cv" class="nav-cv-link"><i class="fas fa-file-alt"></i> Mon CV</a></li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le thème clair" aria-pressed="false">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Menu" type="button">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
     </header>
 

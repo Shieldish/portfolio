@@ -4,6 +4,51 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* --- Theme switcher --- */
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle?.querySelector('i');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+    const setTheme = (theme, persist = true) => {
+        const isLight = theme === 'light';
+        document.documentElement.dataset.theme = theme;
+
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-label', isLight ? 'Activer le thème sombre' : 'Activer le thème clair');
+            themeToggle.setAttribute('aria-pressed', String(isLight));
+            themeToggle.title = isLight ? 'Passer au thème sombre' : 'Passer au thème clair';
+        }
+
+        if (themeIcon) {
+            themeIcon.classList.toggle('fa-sun', !isLight);
+            themeIcon.classList.toggle('fa-moon', isLight);
+        }
+
+        if (themeMeta) {
+            themeMeta.setAttribute('content', isLight ? '#f8fafc' : '#0a0a0f');
+        }
+
+        if (persist) {
+            localStorage.setItem('portfolio-theme', theme);
+        }
+    };
+
+    const storedTheme = localStorage.getItem('portfolio-theme');
+    setTheme(document.documentElement.dataset.theme || storedTheme || (mediaQuery.matches ? 'light' : 'dark'), Boolean(storedTheme));
+
+    themeToggle?.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        setTheme(nextTheme);
+    });
+
+    mediaQuery.addEventListener('change', event => {
+        if (!localStorage.getItem('portfolio-theme')) {
+            setTheme(event.matches ? 'light' : 'dark', false);
+        }
+    });
+
+
     /* --- Text Scramble Animation --- */
     class TextScramble {
         constructor(el) {
