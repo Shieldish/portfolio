@@ -1,0 +1,175 @@
+\documentclass{modernsimplecv}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1cm, a4paper]{geometry}
+
+\usepackage[default]{raleway}
+\usepackage{LobsterTwo}
+
+%------------------------------------------------------------------ Lengths
+
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.48\textwidth}
+\setlength{\rightcolwidth}{0.47\textwidth}
+
+%------------------------------------------------------------------
+\title{Resume -- GABIAM Kossi Samuel}
+\author{GABIAM Kossi Samuel}
+\date{2025}
+
+\pagestyle{empty}
+\begin{document}
+\thispagestyle{empty}
+
+%-------------------------------------------------------------
+
+\tikz[remember picture,overlay] {%
+\node[rectangle, fill=white, anchor=north, minimum width=\paperwidth, minimum height=5cm](header) at (current page.north){};%
+}
+
+\begin{minipage}[t]{0.21\textwidth}
+\vspace{0pt}
+\includegraphics[width=\textwidth]{photo.jpg}\hspace{1em}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.77\textwidth}
+\vspace{0pt}
+\begin{shaded*}
+
+\begin{minipage}[t]{0.4\textwidth}
+\vspace{0pt}
+{\par\centering\huge\LobsterTwo{GABIAM Kossi Samuel}} \\[0.3cm]
+\faGlobe~  Nationality: Togolese \\
+\faMapMarker~ Lomé, Togo \\[0.2em]
+
+{\small
+\faGraduationCap~ \underline{Degree:} M.Sc. Professional \\
+\faCommentsO~ \underline{Languages:} \emph{French} C2, \emph{English} B2+}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.55\textwidth}
+\vspace{0pt}
+\faPhone~ +228 90 84 77 68 \\
+\faAt~ \protect\url{gabiam.k.samuel@gmail.com} \\[0.2em]
+\faLinkedin~ \protect\url{linkedin.com/in/samuel-gabiam-107663165/} \\
+\faGithub~ \protect\url{github.com/Shieldish} \\
+\faGlobe~ \protect\url{shieldish.github.io/portfolio/} \\[0.2em]
+{\small\faCheckCircle~ \textbf{Open to Remote / International}}
+\end{minipage}
+\hfill
+\end{shaded*}
+\end{minipage}\\[15pt]
+
+
+%------------------------------------------------
+
+\subsection*{}
+\vspace{-3em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.48}[0.47]
+\begin{paracol}{2}
+\hbadness5000
+
+\paracolbackgroundoptions
+
+\footnotesize
+{
+
+\small
+\section*{Professional Experience}
+
+\begin{minipage}[t]{\leftcolwidth}
+\begin{tabular}{r| p{0.6\textwidth} c}
+    \cvevent{Jun.~2025 -- Present}{Full Stack Developer}{Full-time}{SuiSco Sarl, Lomé, Togo}{Build and maintain web applications using PHP Laravel and Nuxt.js/Next.js. Designed and integrated a centralised SSO solution with Keycloak, reducing auth overhead across services. Developed RESTful APIs and business-logic modules within distributed architectures.}{} \\
+    \cvevent{Jan.--Dec.~2024}{Full Stack \& Mobile Developer}{Master's Final Year Project}{Djagora}{Built a full-featured internship management platform (job postings, applications, tracking) with React and Node.js/MySQL, deployed to production on Render. Developed a companion cross-platform mobile app with React Native Expo. Designed RESTful API architecture and relational database schema from scratch.}{} \\
+    \cvevent{Jun.--Dec.~2021}{Full Stack \& Big Data Developer}{Bachelor's Final Year Project}{DK-Soft}{Designed and deployed a Big Data processing pipeline with Apache Hadoop and Spark for large-scale data ingestion. Built an Angular web application for real-time extraction and visualisation of social media data. Implemented an end-to-end monitoring pipeline with the ELK Stack (Elasticsearch, Logstash, Kibana).}{}
+\end{tabular}
+\end{minipage}
+
+\vspace{3em}
+
+\begin{minipage}[t]{\leftcolwidth}
+\section*{Education}
+\begin{tabular}{r p{0.6\textwidth} c}
+    \cvdegree{2022--2024}{M.Sc.\ (Professional)}{Systems, Networks \& Cloud Computing}{Faculty of Sciences of Sfax, Tunisia}{Specialisation: Computer Systems Engineering}{} \\
+    \cvdegree{2018--2021}{B.Sc.}{Computer Science}{Faculty of Sciences of Sfax, Tunisia}{Specialisation: Software Engineering \& Information Systems}{} \\
+    \cvdegree{2014--2017}{High School Diploma}{Science Series D}{Lyc\'ee La Gr\^ace de Sokod\'e, Togo}{}{}
+\end{tabular}
+\end{minipage}
+
+\vspace{3em}
+
+\begin{minipage}[t]{\leftcolwidth}
+\section*{Languages}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
+    French  & Native (C2) \\
+    English & Professional working proficiency (B2+) \\
+    Ewe     & Native (vernacular) \\
+\end{tabular}
+
+\bigskip
+
+\section*{Interests}
+{\footnotesize Hackathons \& tech events \textperiodcentered{} Open source contributions \textperiodcentered{} Tech watch \textperiodcentered{} Tennis \textperiodcentered{} Travel}
+\end{minipage}
+
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\begin{minipage}[t]{\rightcolwidth}
+\section*{Professional Summary}
+{\small
+Full Stack Engineer with 2+ years of experience building web, mobile, and cloud-native applications. Proficient in React, Node.js, PHP Laravel, and DevOps tooling (Docker, Kubernetes, AWS / Azure / GCP). Master's degree in Systems, Networks \& Cloud Computing --- bridging application development and infrastructure. Seeking remote or international opportunities as a full-time employee or freelance contractor.
+}
+\end{minipage}
+
+\vspace{2em}
+
+\lineheading{\rightcolwidth}{Technical Skills}{\faCode}{black}
+
+\begin{skillsection}{\rightcolwidth}
+    \cvitem{\faStar\faStar\faStar\faStar\faStar}{React, Next.js, Nuxt.js, TypeScript, Tailwind CSS}
+    \cvitem{\faStarO\faStar\faStar\faStar\faStar}{Node.js, PHP Laravel, REST API, MySQL, PostgreSQL}
+    \cvitem{\faStarO\faStar\faStar\faStar\faStar}{React Native, Flutter (Mobile)}
+    \cvitem{\faStarO\faStarO\faStar\faStar\faStar}{Docker, Kubernetes, AWS, Azure, GCP, GitLab CI/CD}
+    \cvitem{\faStarO\faStarO\faStar\faStar\faStar}{Hadoop, Apache Spark, ELK Stack, Kafka, HBase}
+    \cvitem{\faStarO\faStarO\faStarO\faStar\faStar}{Angular, Vue.js, MongoDB, Ansible, OpenStack}
+    \cvitem{\faStarO\faStarO\faStarO\faStar\faStar}{Linux, CCNA, VMware, Wireshark, Keycloak}
+\end{skillsection}
+
+\bigskip
+
+\vspace{2em}
+
+\begin{minipage}[t]{\rightcolwidth}
+\section*{Notable Projects}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
+    2024 & \emph{Internship Management Platform} (Djagora) \\
+         & Web platform (React + Node.js / MySQL) and mobile app (React Native Expo) for managing student internship offers, applications and tracking. \\
+         & \protect\url{github.com/Shieldish/PFE--} \\[0.5em]
+    2021 & \emph{Social Data Extraction \& Visualisation} (DK-Soft) \\
+         & Angular app for real-time extraction and visualisation of social media data using ELK Stack and external APIs. \\
+         & \protect\url{github.com/Shieldish/test}
+\end{tabular}
+\end{minipage}
+
+\end{paracol}
+
+\vfill{}
+
+%----------------------------------------------------------------------------------------
+%	FOOTER
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\textwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\small GABIAM Kossi Samuel
+\icon{\faEnvelopeO}{black}{} gabiam.k.samuel@gmail.com
+\icon{\faPhone}{black}{} +228 90 84 77 68
+\icon{\faGithub}{black}{} github.com/Shieldish
+\icon{\faGlobe}{black}{} shieldish.github.io/portfolio/}
+\end{center}
+\end{minipage}
+
+\end{document}

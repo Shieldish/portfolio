@@ -1,587 +1,513 @@
 <!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GABIAM Kossi Samuel - Portfolio & CV</title>
-    <meta name="description" content="Portfolio de GABIAM Kossi Samuel — Développeur Fullstack & Mobile, Architecte Cloud & Réseaux. Découvrez mes projets, compétences et mon CV interactif." />
-    <meta name="theme-color" content="#0a0a0f" />
-    <script>
-      (() => {
-        const storageKey = 'portfolio-theme';
-        let savedTheme;
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GABIAM Kossi Samuel -Portfolio</title>
+  <meta name="description" content="Portfolio of GABIAM Kossi Samuel -Full Stack & Mobile Developer, Cloud & Networks Architect" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem('gks-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
 
-        try {
-          savedTheme = localStorage.getItem(storageKey);
-        } catch {
-          savedTheme = null;
-        }
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">GKS</div>
+  </div>
 
-        const prefersLight = window.matchMedia?.('(prefers-color-scheme: light)')?.matches;
-        const theme = ['dark', 'light'].includes(savedTheme)
-          ? savedTheme
-          : prefersLight
-            ? 'light'
-            : 'dark';
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-        document.documentElement.dataset.theme = theme;
-      })();
-    </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- CURSOR GLOW -->
-    <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- PARTICLES CANVAS -->
+  <canvas id="particlesCanvas"></canvas>
 
-    <!-- HEADER -->
-    <header id="header">
-      <nav class="container">
-        <a href="#" class="nav-logo">GKS<span class="logo-dot"></span></a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#education">Formation</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#experience">Expérience</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#cv" class="nav-cv-link"><i class="fas fa-file-alt"></i> Mon CV</a></li>
-        </ul>
-        <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le thème clair" aria-pressed="false">
-            <i class="fas fa-sun" aria-hidden="true"></i>
-          </button>
-          <button class="hamburger" id="hamburger" aria-label="Menu" type="button">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg-grid"></div>
-      <div class="hero-bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav-logo">GKS<span class="nav-logo-dot"></span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#journey" class="nav-link">Journey</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <div class="container hero-inner">
-        <div class="hero-badge">
-          <span class="badge-dot"></span> Disponible pour projets IT
-        </div>
-        <h1 class="hero-name">
-          <span class="hero-line">GABIAM</span>
-          <span class="hero-line">Kossi Samuel</span>
-        </h1>
-        <p class="hero-role">
-          <span class="scramble-text">Développeur Fullstack & Mobile · Architecte Cloud & Réseaux</span><br/>
-          <span class="hero-role-sub">De l'interface au serveur, une vision bout en bout.</span>
-        </p>
-        <div class="hero-contacts">
-          <a href="mailto:gabiam.k.samuel@gmail.com" class="contact-chip">
-            <i class="fas fa-envelope"></i> gabiam.k.samuel@gmail.com
-          </a>
-          <a href="tel:+22890847768" class="contact-chip">
-            <i class="fas fa-phone"></i> +228 90847768
-          </a>
-          <span class="contact-chip">
-            <i class="fas fa-map-marker-alt"></i> Lomé, TOGO 🇹🇬
-          </span>
-        </div>
-        <div class="hero-cta">
-          <a href="https://github.com/Shieldish" target="_blank" class="btn btn-outline">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank" class="btn btn-primary">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="#cv" class="btn btn-accent">
-            <i class="fas fa-file-download"></i> Mon CV
-          </a>
-        </div>
-      </div>
-      <div class="hero-scroll-hint">
-        <span>Défiler</span>
-        <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
-      </div>
-    </section>
+    </nav>
+  </header>
 
-    <!-- ABOUT -->
-    <section id="about" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">01 · À propos</span>
-          <h2 class="section-title">Qui suis-je ?</h2>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge" data-reveal="fade-up">
+        <span class="hero-badge-dot"></span>
+        Open to Remote · Full-time · Freelance
+        <span class="hero-badge-dot"></span>
+      </div>
+      <h1 class="hero-title" data-reveal="fade-up">
+        <span class="hero-line">GABIAM</span>
+        <span class="hero-line accent">Kossi Samuel</span>
+      </h1>
+      <div class="hero-typewriter" data-reveal="fade-up">
+        <span class="typewriter-prefix">►</span>
+        <span class="typewriter-text" id="typewriterText"></span>
+        <span class="typewriter-cursor">|</span>
+      </div>
+      <p class="hero-sub" data-reveal="fade-up">From interface to server -a full end-to-end vision.</p>
+      <div class="hero-cta" data-reveal="fade-up">
+        <a href="#projects" class="btn btn-primary">
+          <span>View my projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="gabiam.pdf" download class="btn btn-outline">
+          <i class="fas fa-download"></i>
+          <span>Resume</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="hero-social" data-reveal="fade-up">
+        <a href="https://github.com/Shieldish" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:gabiam.k.samuel@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+22890847768" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+      <div class="hero-scroll" data-reveal="fade-up">
+        <span>Scroll</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
         </div>
-        <div class="about-grid">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-number">01</span>
+        <span class="section-label">About</span>
+        <h2 class="section-title">Who am I?</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-content" data-reveal="slide-right">
+          <div class="about-avatar">
+            <div class="avatar-inner">
+              <img src="photo.jpg" alt="GABIAM Kossi Samuel" class="avatar-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <span class="avatar-initials" style="display:none">GKS</span>
+              <div class="avatar-ring"></div>
+            </div>
+            <div class="avatar-social">
+              <a href="https://github.com/Shieldish" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
           <div class="about-text">
             <p>
-              Je m'appelle <strong>GABIAM Kossi Samuel</strong>, titulaire d'un
-              <strong>Master en Systèmes, Réseaux et Cloud Computing</strong> et
-              d'une <strong>Licence en Sciences de l'Informatique</strong>. Mon
-              parcours m'a d'abord formé au
-              <strong>développement web et mobile</strong> — conception
-              d'interfaces, APIs, applications cross-platform — avant de
-              s'orienter vers l'infrastructure, la virtualisation et les
-              architectures distribuées.
+              My name is <strong>GABIAM Kossi Samuel</strong>, holder of a
+              <strong>M.Sc. in Systems, Networks & Cloud Computing</strong> and a
+              <strong>B.Sc. in Computer Science</strong>. My background first
+              grounded me in <strong>web and mobile development</strong> —
+              UI design, APIs, cross-platform apps -before expanding into
+              infrastructure, virtualization, and distributed architectures.
             </p>
             <p>
-              Cette double formation me permet d'intervenir aussi bien sur la
-              couche applicative que sur la couche réseau et cloud — un profil
-              complet que je mets au service de projets techniques ambitieux.
+              This dual expertise lets me operate across both the application
+              layer and the network & cloud layer -a well-rounded profile I bring
+              to ambitious technical projects.
             </p>
             <p>
-              Passionné par les <strong>hackathons</strong>, les <strong>projets open source</strong> 
-              et la <strong>veille technologique</strong>, je suis constamment à la recherche 
-              de nouveaux défis techniques pour contribuer à des projets innovants.
+              Passionate about <strong>hackathons</strong>, <strong>open source</strong>,
+              and <strong>tech watch</strong>, I'm constantly seeking new
+              engineering challenges to contribute to innovative projects.
             </p>
-          </div>
-          <div class="about-stats">
-            <div class="stat-box">
-              <div class="stat-number" data-count="2">0</div>
-              <div class="stat-suffix">+</div>
-              <div class="stat-label">Ans d'expérience</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number" data-count="5">0</div>
-              <div class="stat-suffix">+</div>
-              <div class="stat-label">Projets réalisés</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number-text">Master</div>
-              <div class="stat-label">Niveau d'études</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="section section-alt reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">02 · Formation</span>
-          <h2 class="section-title">Parcours académique</h2>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">2022 – 2024</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Master Professionnel — Systèmes, Réseaux & Cloud Computing</h3>
-              <p>Faculté des Sciences de Sfax, Tunisie · Département Informatique</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2018 – 2021</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Licence en Sciences de l'Informatique</h3>
-              <p>Faculté des Sciences de Sfax, Tunisie · Département Informatique</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2014 – 2017</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Baccalauréat — Sciences Expérimentales, Série D</h3>
-              <p>Lycée La Grâce de Sokodé, Région Centrale</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2010 – 2014</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>BEPC — Brevet d'Études du Premier Cycle</h3>
-              <p>Lycée La Grâce de Sokodé, Région Centrale</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">03 · Compétences</span>
-          <h2 class="section-title">Outils & Technologies</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-card" data-tilt>
-            <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <h3>Big Data</h3>
-            <div class="skill-tags">
-              <span>Hadoop</span><span>ElasticSearch</span><span>Spark</span>
-              <span>Kafka</span><span>HBase</span><span>Hive</span>
-              <span>Pig</span><span>Cassandra</span><span>MapReduce</span><span>Zookeeper</span>
-            </div>
-          </div>
-          <div class="skill-card" data-tilt>
-            <div class="skill-icon"><i class="fas fa-code"></i></div>
-            <h3>Développement Web & Frameworks</h3>
-            <div class="skill-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span>
-              <span>PHP Laravel</span><span>MySQL</span><span>Tailwind CSS</span>
-              <span>Angular</span><span>React</span><span>Nuxt.js</span>
-              <span>Next.js</span><span>Node.js</span><span>Express.js</span><span>Deno.js</span>
-            </div>
-          </div>
-          <div class="skill-card" data-tilt>
-            <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>Logiciel & Mobile</h3>
-            <div class="skill-tags">
-              <span>React Native</span><span>Android Studio</span>
-              <span>Flutter</span><span>Java</span><span>Python</span><span>C</span><span>C#</span>
-            </div>
-          </div>
-          <div class="skill-card" data-tilt>
-            <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-            <h3>Réseaux & Infrastructure</h3>
-            <div class="skill-tags">
-              <span>CCNA</span><span>HCNA</span><span>Packet Tracer</span>
-              <span>Marionnet</span><span>Wireshark</span><span>Linux</span>
-              <span>Windows</span><span>macOS</span><span>VirtualBox</span><span>VMware</span>
-            </div>
-          </div>
-          <div class="skill-card" data-tilt>
-            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-            <h3>Cloud & DevOps</h3>
-            <div class="skill-tags">
-              <span>Docker</span><span>OpenNebula</span><span>OpenStack</span>
-              <span>Microsoft Azure</span><span>AWS</span><span>Google Cloud Platform</span>
-            </div>
-          </div>
-          <div class="skill-card" data-tilt>
-            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-            <h3>Modélisation</h3>
-            <div class="skill-tags">
-              <span>UML</span><span>SysML</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section section-alt reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">04 · Expérience</span>
-          <h2 class="section-title">Expérience professionnelle</h2>
-        </div>
-        <div class="exp-list">
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <h3>Développeur Full Stack</h3>
-                <div class="exp-company"><i class="fas fa-building"></i> SuiSco Sarl</div>
+            <div class="about-info">
+              <div class="info-item">
+                <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                <span>gabiam.k.samuel@gmail.com</span>
               </div>
-              <div class="exp-date">Juin 2025 — Présent</div>
+              <div class="info-item">
+                <span class="info-icon"><i class="fas fa-phone"></i></span>
+                <span>+228 90847768</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                <span>Lomé, Togo 🇹🇬</span>
+              </div>
             </div>
-            <div class="exp-projects">
-              <div class="exp-project">
-                <span class="project-name">SuiSco APP</span>
-                <div class="tech-tags">
+          </div>
+        </div>
+        <div class="about-stats" data-reveal="slide-left">
+          <div class="stat-card">
+            <div class="stat-number" data-target="2">0</div>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Years of experience</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="5">0</div>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Projects completed</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number-text">M.Sc.</div>
+            <span class="stat-label">Degree level</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-number">02</span>
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">Tools & Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" data-reveal="fade-up" data-delay="0">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <h3>Big Data</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          <div class="skill-tags">
+            <span>Hadoop</span><span>ElasticSearch</span><span>Spark</span>
+            <span>Kafka</span><span>HBase</span><span>Cassandra</span>
+          </div>
+        </div>
+        <div class="skill-card" data-reveal="fade-up" data-delay="100">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3>Web Development</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          <div class="skill-tags">
+            <span>HTML/CSS</span><span>JavaScript</span><span>TypeScript</span>
+            <span>React</span><span>Angular</span><span>Next.js</span>
+            <span>Node.js</span><span>Laravel</span><span>Tailwind</span>
+          </div>
+        </div>
+        <div class="skill-card" data-reveal="fade-up" data-delay="200">
+          <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          <div class="skill-tags">
+            <span>React Native</span><span>Flutter</span><span>Python</span>
+          </div>
+        </div>
+        <div class="skill-card" data-reveal="fade-up" data-delay="300">
+          <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Networks & Infrastructure</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          <div class="skill-tags">
+            <span>CCNA</span><span>HCNA</span><span>Wireshark</span>
+            <span>Linux</span><span>VirtualBox</span><span>VMware</span>
+          </div>
+        </div>
+        <div class="skill-card" data-reveal="fade-up" data-delay="400">
+          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud & DevOps</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          <div class="skill-tags">
+            <span>Docker</span><span>Kubernetes</span><span>AWS</span>
+            <span>Azure</span><span>GCP</span><span>OpenStack</span><span>GitLab CI/CD</span>
+          </div>
+        </div>
+        <div class="skill-card" data-reveal="fade-up" data-delay="500">
+          <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+          <h3>Modeling & Design</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          <div class="skill-tags">
+            <span>UML</span><span>SysML</span><span>Figma</span>
+            <span>Agile Methods</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY (Education + Experience) -->
+  <section class="section" id="journey">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-number">03</span>
+        <span class="section-label">Journey</span>
+        <h2 class="section-title">Education & Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="journey-grid">
+        <div class="journey-col" data-reveal="slide-right">
+          <h3 class="journey-col-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2022 – 2024</span>
+                <h4>M.Sc. (Professional) -Systems, Networks & Cloud Computing</h4>
+                <p>Faculty of Sciences of Sfax, Tunisia</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2018 – 2021</span>
+                <h4>B.Sc. -Computer Science (Software Engineering)</h4>
+                <p>Faculty of Sciences of Sfax, Tunisia</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2014 – 2017</span>
+                <h4>High School Diploma -Science Series D</h4>
+                <p>Lycée La Grâce de Sokodé, Togo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="journey-col" data-reveal="slide-left">
+          <h3 class="journey-col-title"><i class="fas fa-briefcase"></i> Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot dot-accent"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">June 2025 -Present</span>
+                <h4>Full Stack Developer</h4>
+                <p class="company">SuiSco Sarl</p>
+                <ul class="timeline-bullets">
+                  <li>Build and maintain web applications using PHP Laravel and Nuxt.js / Next.js</li>
+                  <li>Designed and integrated a centralized SSO solution with Keycloak across multiple services</li>
+                  <li>Developed RESTful APIs and business logic modules within distributed architectures</li>
+                </ul>
+                <div class="timeline-tags">
                   <span>PHP Laravel</span><span>SSO Keycloak</span>
-                </div>
-              </div>
-              <div class="exp-project">
-                <span class="project-name">YAS QUIZBOX</span>
-                <div class="tech-tags">
-                  <span>Nuxt.js</span><span>Next.js</span><span>Deno.js</span>
+                  <span>Nuxt.js</span><span>Next.js</span>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <h3>Développeur Full Stack & Mobile</h3>
-                <div class="exp-company"><i class="fas fa-building"></i> Djagora</div>
+            <div class="timeline-item">
+              <div class="timeline-dot dot-accent"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">Jan 2024 -Dec 2024</span>
+                <h4>Full Stack & Mobile Developer</h4>
+                <p class="company">Djagora</p>
+                <ul class="timeline-bullets">
+                  <li>Built an internship management platform with React + Node.js API and React Native mobile app</li>
+                  <li>Designed MySQL database schema for student internship offer and application tracking</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span>React</span><span>Node.js</span>
+                  <span>React Native</span><span>MySQL</span>
+                </div>
               </div>
-              <div class="exp-date">2024</div>
             </div>
-            <p class="exp-desc">Application Web et Mobile de Gestion de Stage</p>
-            <ul class="exp-list-items">
-              <li>Développement d'applications web avec React et NodeJs/MySQL</li>
-              <li>Développement mobile avec React Native Expo</li>
-            </ul>
-          </div>
-
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <h3>Développeur Full Stack & Intégration Big Data</h3>
-                <div class="exp-company"><i class="fas fa-building"></i> DK-Soft</div>
+            <div class="timeline-item">
+              <div class="timeline-dot dot-accent"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">June 2021 -Dec 2021</span>
+                <h4>Full Stack & Big Data Developer</h4>
+                <p class="company">DK-Soft</p>
+                <ul class="timeline-bullets">
+                  <li>Built an Angular app for real-time social media data extraction and visualization using ELK Stack</li>
+                  <li>Processed large-scale datasets with Hadoop and Apache Spark</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span>Hadoop</span><span>Spark</span>
+                  <span>ELK Stack</span><span>Angular</span>
+                </div>
               </div>
-              <div class="exp-date">2021</div>
             </div>
-            <p class="exp-desc">Architecture Big Data et développement web</p>
-            <ul class="exp-list-items">
-              <li>Mise en place d'architecture Hadoop et Spark</li>
-              <li>Implémentation stack ELK</li>
-            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">05 · Projets</span>
-          <h2 class="section-title">Projets réalisés</h2>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon"><i class="fas fa-briefcase"></i></div>
-              <div class="project-links">
-                <a href="https://pfe2024.onrender.com/" target="_blank" title="Démo"><i class="fas fa-external-link-alt"></i></a>
-                <a href="https://github.com/Shieldish/PFE--.git" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank" title="GitHub Mobile"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-            <h3>Application de Gestion de Stage</h3>
-            <p>Plateforme web et mobile complète pour la gestion des stages étudiants. Interface React, API Node.js, application mobile React Native.</p>
+  <!-- PROJECTS -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-number">04</span>
+        <span class="section-label">Projects</span>
+        <h2 class="section-title">My Work</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-reveal="fade-up" data-delay="0">
+          <div class="project-thumb">
+            <div class="project-icon"><i class="fas fa-briefcase"></i></div>
+          </div>
+          <div class="project-body">
+            <h3>Internship Management Platform</h3>
+            <p>Full web and mobile platform for managing student internships -job postings, applications and tracking. React frontend, Node.js API, React Native mobile app.</p>
             <div class="project-tech">
               <span>React</span><span>Node.js</span><span>MySQL</span><span>React Native</span>
             </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-              <div class="project-links">
-                <a href="https://github.com/Shieldish/test.git" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://github.com/Shieldish/Api-test" target="_blank" title="GitHub API"><i class="fab fa-github"></i></a>
-              </div>
+            <div class="project-links">
+              <a href="https://github.com/Shieldish/PFE--.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Frontend</a>
+              <a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Mobile</a>
             </div>
-            <h3>Extraction & Visualisation de Données</h3>
-            <p>Application d'analyse et de visualisation des données issues des réseaux sociaux, avec intégration d'API externes.</p>
+          </div>
+        </div>
+        <div class="project-card" data-reveal="fade-up" data-delay="100">
+          <div class="project-thumb">
+            <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
+          </div>
+          <div class="project-body">
+            <h3>Social Data Extraction & Visualization</h3>
+            <p>Analytics app for extracting and visualizing social media data, with external API integration and ELK Stack for real-time indexing and dashboards.</p>
             <div class="project-tech">
-              <span>Angular</span><span>API REST</span><span>Chart.js</span><span>Elasticsearch</span>
+              <span>Angular</span><span>REST API</span><span>Chart.js</span><span>Elasticsearch</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Shieldish/test.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Frontend</a>
+              <a href="https://github.com/Shieldish/Api-test" target="_blank" class="project-link"><i class="fab fa-github"></i> API</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card coming-soon" data-reveal="fade-up" data-delay="200">
+          <div class="project-thumb">
+            <div class="project-icon"><i class="fas fa-rocket"></i></div>
+          </div>
+          <div class="project-body">
+            <h3>More projects coming soon</h3>
+            <p>New projects currently in development. Stay tuned!</p>
+            <div class="project-tech">
+              <span>Coming soon</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CV SECTION -->
-    <section id="cv" class="section section-alt reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">06 · Curriculum Vitae</span>
-          <h2 class="section-title">Mon CV interactif</h2>
-        </div>
-
-        <div class="cv-wrapper">
-          <!-- CV Header -->
-          <div class="cv-header-card">
-            <div class="cv-avatar">
-              <div class="cv-avatar-inner">
-                <span>GKS</span>
-              </div>
-            </div>
-            <div class="cv-header-info">
-              <h2 class="cv-name">GABIAM Kossi Samuel</h2>
-              <p class="cv-headline">Développeur Fullstack & Mobile · Architecte Cloud & Réseaux</p>
-              <div class="cv-contact-grid">
-                <a href="mailto:gabiam.k.samuel@gmail.com"><i class="fas fa-envelope"></i> gabiam.k.samuel@gmail.com</a>
-                <a href="tel:+22890847768"><i class="fas fa-phone"></i> +228 90847768</a>
-                <span><i class="fas fa-map-marker-alt"></i> Lomé, TOGO 🇹🇬</span>
-                <a href="https://github.com/Shieldish" target="_blank"><i class="fab fa-github"></i> github.com/Shieldish</a>
-                <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              </div>
-            </div>
-            <div class="cv-download">
-              <a href="gabiam.pdf" download class="btn btn-primary btn-lg">
-                <i class="fas fa-download"></i> Télécharger le CV (PDF)
-              </a>
-            </div>
-          </div>
-
-          <!-- CV Body -->
-          <div class="cv-body">
-            <!-- Left Column -->
-            <div class="cv-main">
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-user-tie"></i> Profil</h3>
-                <p class="cv-profile-text">
-                  Ingénieur Informatique titulaire d'un Master en Systèmes, Réseaux et Cloud Computing, 
-                  avec une solide expérience en développement web/mobile fullstack et en architecture d'infrastructures. 
-                  Passionné par l'innovation technologique, les hackathons et la veille technologique. 
-                  Recherche des opportunités de contribuer à des projets ambitieux dans des environnements collaboratifs.
-                </p>
-              </div>
-
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-briefcase"></i> Expérience Professionnelle</h3>
-                
-                <div class="cv-exp-item">
-                  <div class="cv-exp-header">
-                    <div>
-                      <h4>Développeur Full Stack</h4>
-                      <p class="cv-exp-company">SuiSco Sarl</p>
-                    </div>
-                    <span class="cv-exp-date">Juin 2025 — Présent</span>
-                  </div>
-                  <ul>
-                    <li>Développement de la plateforme SuiSco APP avec PHP Laravel et SSO Keycloak</li>
-                    <li>Conception et développement de YAS QUIZBOX avec Nuxt.js, Next.js et Deno.js</li>
-                    <li>Mise en œuvre de l'authentification unique (SSO) pour sécuriser l'accès aux applications</li>
-                  </ul>
-                </div>
-
-                <div class="cv-exp-item">
-                  <div class="cv-exp-header">
-                    <div>
-                      <h4>Développeur Full Stack & Mobile</h4>
-                      <p class="cv-exp-company">Djagora</p>
-                    </div>
-                    <span class="cv-exp-date">2024</span>
-                  </div>
-                  <ul>
-                    <li>Développement d'une application web de gestion de stage avec React et Node.js/MySQL</li>
-                    <li>Création de l'application mobile cross-platform avec React Native Expo</li>
-                    <li>Conception d'API RESTful pour la communication entre frontend et backend</li>
-                  </ul>
-                </div>
-
-                <div class="cv-exp-item">
-                  <div class="cv-exp-header">
-                    <div>
-                      <h4>Développeur Full Stack & Intégration Big Data</h4>
-                      <p class="cv-exp-company">DK-Soft</p>
-                    </div>
-                    <span class="cv-exp-date">2021</span>
-                  </div>
-                  <ul>
-                    <li>Mise en place d'architecture Big Data avec Hadoop et Spark</li>
-                    <li>Implémentation de la stack ELK (Elasticsearch, Logstash, Kibana)</li>
-                    <li>Développement d'interfaces web pour la visualisation de données</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-rocket"></i> Projets Clés</h3>
-                <div class="cv-project-item">
-                  <h4>Application de Gestion de Stage <a href="https://pfe2024.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a></h4>
-                  <p>Plateforme web et mobile complète — React, Node.js, MySQL, React Native</p>
-                </div>
-                <div class="cv-project-item">
-                  <h4>Extraction & Visualisation de Données</h4>
-                  <p>Analyse de données des réseaux sociaux — Angular, API REST, Chart.js, Elasticsearch</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column -->
-            <div class="cv-sidebar">
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formation</h3>
-                <div class="cv-edu-item">
-                  <h4>Master Pro. — Systèmes, Réseaux & Cloud</h4>
-                  <p>Fac. Sciences de Sfax, Tunisie</p>
-                  <span class="cv-edu-year">2022 – 2024</span>
-                </div>
-                <div class="cv-edu-item">
-                  <h4>Licence — Sciences de l'Informatique</h4>
-                  <p>Fac. Sciences de Sfax, Tunisie</p>
-                  <span class="cv-edu-year">2018 – 2021</span>
-                </div>
-                <div class="cv-edu-item">
-                  <h4>Baccalauréat — Série D</h4>
-                  <p>Lycée La Grâce, Sokodé</p>
-                  <span class="cv-edu-year">2014 – 2017</span>
-                </div>
-              </div>
-
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-tools"></i> Compétences Techniques</h3>
-                <div class="cv-skill-group">
-                  <h4>Web & Frameworks</h4>
-                  <div class="cv-skill-pills">
-                    <span>React</span><span>Angular</span><span>Next.js</span><span>Nuxt.js</span>
-                    <span>Node.js</span><span>Laravel</span><span>TypeScript</span>
-                  </div>
-                </div>
-                <div class="cv-skill-group">
-                  <h4>Mobile</h4>
-                  <div class="cv-skill-pills">
-                    <span>React Native</span><span>Flutter</span><span>Android Studio</span>
-                  </div>
-                </div>
-                <div class="cv-skill-group">
-                  <h4>Cloud & DevOps</h4>
-                  <div class="cv-skill-pills">
-                    <span>Docker</span><span>AWS</span><span>Azure</span><span>GCP</span><span>OpenStack</span>
-                  </div>
-                </div>
-                <div class="cv-skill-group">
-                  <h4>Big Data</h4>
-                  <div class="cv-skill-pills">
-                    <span>Hadoop</span><span>Spark</span><span>Kafka</span><span>ELK</span>
-                  </div>
-                </div>
-                <div class="cv-skill-group">
-                  <h4>Réseaux</h4>
-                  <div class="cv-skill-pills">
-                    <span>CCNA</span><span>HCNA</span><span>Wireshark</span><span>Linux</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-language"></i> Langues</h3>
-                <div class="cv-lang-item">
-                  <span>Français</span>
-                  <div class="cv-lang-bar"><div class="cv-lang-fill" style="width:95%"></div></div>
-                  <small>Courant</small>
-                </div>
-                <div class="cv-lang-item">
-                  <span>Anglais</span>
-                  <div class="cv-lang-bar"><div class="cv-lang-fill" style="width:70%"></div></div>
-                  <small>Intermédiaire</small>
-                </div>
-              </div>
-
-              <div class="cv-section">
-                <h3 class="cv-section-title"><i class="fas fa-heart"></i> Centres d'intérêt</h3>
-                <div class="cv-interests">
-                  <span><i class="fas fa-trophy"></i> Hackathons</span>
-                  <span><i class="fas fa-code-branch"></i> Open Source</span>
-                  <span><i class="fas fa-book"></i> Veille Tech</span>
-                  <span><i class="fas fa-lightbulb"></i> Innovation</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-number">05</span>
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <div class="section-line"></div>
       </div>
-    </section>
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal="slide-right">
+          <h3>Get in touch</h3>
+          <p>Have a project in mind? Looking to collaborate? Don't hesitate to reach out!</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Phone</span>
+                <a href="tel:+22890847768">+228 90847768</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <span class="contact-item-label">Location</span>
+                <span>Lomé, Togo 🇹🇬</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="contact-item-label">GitHub</span>
+                <a href="https://github.com/Shieldish" target="_blank">github.com/Shieldish</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-linkedin"></i></div>
+              <div>
+                <span class="contact-item-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank">Samuel Gabiam</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" data-reveal="slide-left" action="https://formspree.io/f/xwvywdvz" method="POST">
+          <div class="form-group">
+            <input type="text" id="formName" name="name" placeholder=" " required />
+            <label for="formName">Your name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="formEmail" name="email" placeholder=" " required />
+            <label for="formEmail">Your email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="formSubject" name="subject" placeholder=" " />
+            <label for="formSubject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="formMessage" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="formMessage">Your message</label>
+          </div>
+          <div class="form-status" id="formStatus"></div>
+          <button type="submit" class="btn btn-primary btn-submit" id="formSubmitBtn">
+            <span>Send message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="container footer-inner">
-        <div class="footer-logo">GKS<span class="logo-dot"></span></div>
-        <p class="footer-tagline">
-          Ingénieur Systèmes · Développeur Fullstack · Passionné de technologie
-        </p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a href="#" class="footer-logo">GKS<span class="nav-logo-dot"></span></a>
         <div class="footer-social">
           <a href="https://github.com/Shieldish" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="mailto:gabiam.k.samuel@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+22890847768" aria-label="Phone"><i class="fas fa-phone"></i></a>
         </div>
-        <p class="footer-copy">&copy; 2025 GABIAM Kossi Samuel · Tous droits réservés</p>
       </div>
-    </footer>
+      <div class="footer-bottom">
+        <p>&copy; 2025 GABIAM Kossi Samuel -All rights reserved</p>
+        <p class="footer-made"><i class="fas fa-code"></i> Designed & built with passion</p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
 </html>
