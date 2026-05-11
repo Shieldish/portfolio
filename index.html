@@ -1,513 +1,429 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GABIAM Kossi Samuel -Portfolio</title>
-  <meta name="description" content="Portfolio of GABIAM Kossi Samuel -Full Stack & Mobile Developer, Cloud & Networks Architect" />
-  <meta name="theme-color" content="#0a0a0f" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Portfolio  - Kossi Samuel Gabiam</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    (() => {
-      try {
-        const t = localStorage.getItem('gks-theme');
-        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-      } catch(e) {}
-    })();
-  </script>
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-    <div class="loader-ring"></div>
-    <div class="loader-text">GKS</div>
-  </div>
-
-  <!-- CURSOR -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- PARTICLES CANVAS -->
-  <canvas id="particlesCanvas"></canvas>
-
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav-logo">GKS<span class="nav-logo-dot"></span></a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#journey" class="nav-link">Journey</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-          <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="avatar">KSG</div>
+      <h1>Kossi Samuel Gabiam</h1>
+      <p class="tagline">Full-Stack Developer · Systems & Cloud Engineer</p>
+      <div class="contact-bar">
+        <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>
+        <span>+228 90 84 77 68</span>
+        <span>Lomé, Togo · Available Worldwide (Remote)</span>
       </div>
-    </nav>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Shieldish" target="_blank">GitHub</a>
+        <a href="https://shieldish.github.io/portfolio/" target="_blank">Portfolio v1</a>
+        <a href="https://portfolio.gabiam-k-samuel.workers.dev/" target="_blank">Portfolio v2</a>
+      </div>
+      <div class="badges">
+        <span class="badge">Systems & Networks</span>
+        <span class="badge">Cloud Computing</span>
+        <span class="badge">Software Engineering</span>
+        <span class="badge">Open to Remote · Full-time · Freelance</span>
+      </div>
+      <div class="hero-cv">
+        <a href="cv_gabiam.pdf" download class="btn-cv">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download CV (PDF)
+        </a>
+        <a href="cv_gabiam.pdf" target="_blank" class="btn-cv btn-cv-outline">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          View CV
+        </a>
+      </div>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <div class="hero-badge" data-reveal="fade-up">
-        <span class="hero-badge-dot"></span>
-        Open to Remote · Full-time · Freelance
-        <span class="hero-badge-dot"></span>
-      </div>
-      <h1 class="hero-title" data-reveal="fade-up">
-        <span class="hero-line">GABIAM</span>
-        <span class="hero-line accent">Kossi Samuel</span>
-      </h1>
-      <div class="hero-typewriter" data-reveal="fade-up">
-        <span class="typewriter-prefix">►</span>
-        <span class="typewriter-text" id="typewriterText"></span>
-        <span class="typewriter-cursor">|</span>
-      </div>
-      <p class="hero-sub" data-reveal="fade-up">From interface to server -a full end-to-end vision.</p>
-      <div class="hero-cta" data-reveal="fade-up">
-        <a href="#projects" class="btn btn-primary">
-          <span>View my projects</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-        <a href="gabiam.pdf" download class="btn btn-outline">
-          <i class="fas fa-download"></i>
-          <span>Resume</span>
-        </a>
-        <a href="#contact" class="btn btn-ghost">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      <div class="hero-social" data-reveal="fade-up">
-        <a href="https://github.com/Shieldish" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:gabiam.k.samuel@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+22890847768" aria-label="Phone"><i class="fas fa-phone"></i></a>
-      </div>
-      <div class="hero-scroll" data-reveal="fade-up">
-        <span>Scroll</span>
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-number">01</span>
-        <span class="section-label">About</span>
-        <h2 class="section-title">Who am I?</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-content" data-reveal="slide-right">
-          <div class="about-avatar">
-            <div class="avatar-inner">
-              <img src="photo.jpg" alt="GABIAM Kossi Samuel" class="avatar-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-              <span class="avatar-initials" style="display:none">GKS</span>
-              <div class="avatar-ring"></div>
-            </div>
-            <div class="avatar-social">
-              <a href="https://github.com/Shieldish" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="about-text">
-            <p>
-              My name is <strong>GABIAM Kossi Samuel</strong>, holder of a
-              <strong>M.Sc. in Systems, Networks & Cloud Computing</strong> and a
-              <strong>B.Sc. in Computer Science</strong>. My background first
-              grounded me in <strong>web and mobile development</strong> —
-              UI design, APIs, cross-platform apps -before expanding into
-              infrastructure, virtualization, and distributed architectures.
-            </p>
-            <p>
-              This dual expertise lets me operate across both the application
-              layer and the network & cloud layer -a well-rounded profile I bring
-              to ambitious technical projects.
-            </p>
-            <p>
-              Passionate about <strong>hackathons</strong>, <strong>open source</strong>,
-              and <strong>tech watch</strong>, I'm constantly seeking new
-              engineering challenges to contribute to innovative projects.
-            </p>
-            <div class="about-info">
-              <div class="info-item">
-                <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                <span>gabiam.k.samuel@gmail.com</span>
-              </div>
-              <div class="info-item">
-                <span class="info-icon"><i class="fas fa-phone"></i></span>
-                <span>+228 90847768</span>
-              </div>
-              <div class="info-item">
-                <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                <span>Lomé, Togo 🇹🇬</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="about-stats" data-reveal="slide-left">
-          <div class="stat-card">
-            <div class="stat-number" data-target="2">0</div>
-            <span class="stat-plus">+</span>
-            <span class="stat-label">Years of experience</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="5">0</div>
-            <span class="stat-plus">+</span>
-            <span class="stat-label">Projects completed</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number-text">M.Sc.</div>
-            <span class="stat-label">Degree level</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p>
+        I hold a <strong>Professional Master's in Information Systems Engineering</strong>
+        (specialization: Systems, Networks & Cloud Computing) and a
+        <strong>Bachelor's in Computer Science</strong> (specialization: Software Engineering &
+        Information Systems) from the Faculty of Sciences of Sfax, University of Sfax  - Tunisia.
+      </p>
+      <p>
+        I design and build full-stack web and mobile applications, architect distributed systems,
+        and deploy cloud infrastructure. I am comfortable across the entire stack  - from REST API
+        design and backend services to modern front-end frameworks and DevOps pipelines.
+      </p>
+    </section>
 
-  <!-- SKILLS -->
-  <section class="section section-alt" id="skills">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-number">02</span>
-        <span class="section-label">Skills</span>
-        <h2 class="section-title">Tools & Technologies</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card" data-reveal="fade-up" data-delay="0">
-          <div class="skill-icon"><i class="fas fa-database"></i></div>
-          <h3>Big Data</h3>
-          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          <div class="skill-tags">
-            <span>Hadoop</span><span>ElasticSearch</span><span>Spark</span>
-            <span>Kafka</span><span>HBase</span><span>Cassandra</span>
-          </div>
-        </div>
-        <div class="skill-card" data-reveal="fade-up" data-delay="100">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <h3>Web Development</h3>
-          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
-          <div class="skill-tags">
-            <span>HTML/CSS</span><span>JavaScript</span><span>TypeScript</span>
-            <span>React</span><span>Angular</span><span>Next.js</span>
-            <span>Node.js</span><span>Laravel</span><span>Tailwind</span>
-          </div>
-        </div>
-        <div class="skill-card" data-reveal="fade-up" data-delay="200">
-          <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3>Mobile</h3>
-          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-          <div class="skill-tags">
-            <span>React Native</span><span>Flutter</span><span>Python</span>
-          </div>
-        </div>
-        <div class="skill-card" data-reveal="fade-up" data-delay="300">
-          <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-          <h3>Networks & Infrastructure</h3>
-          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-          <div class="skill-tags">
-            <span>CCNA</span><span>HCNA</span><span>Wireshark</span>
-            <span>Linux</span><span>VirtualBox</span><span>VMware</span>
-          </div>
-        </div>
-        <div class="skill-card" data-reveal="fade-up" data-delay="400">
-          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-          <h3>Cloud & DevOps</h3>
-          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-          <div class="skill-tags">
-            <span>Docker</span><span>Kubernetes</span><span>AWS</span>
-            <span>Azure</span><span>GCP</span><span>OpenStack</span><span>GitLab CI/CD</span>
-          </div>
-        </div>
-        <div class="skill-card" data-reveal="fade-up" data-delay="500">
-          <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-          <h3>Modeling & Design</h3>
-          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          <div class="skill-tags">
-            <span>UML</span><span>SysML</span><span>Figma</span>
-            <span>Agile Methods</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2>Experience</h2>
 
-  <!-- JOURNEY (Education + Experience) -->
-  <section class="section" id="journey">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-number">03</span>
-        <span class="section-label">Journey</span>
-        <h2 class="section-title">Education & Experience</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="journey-grid">
-        <div class="journey-col" data-reveal="slide-right">
-          <h3 class="journey-col-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">2022 – 2024</span>
-                <h4>M.Sc. (Professional) -Systems, Networks & Cloud Computing</h4>
-                <p>Faculty of Sciences of Sfax, Tunisia</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">2018 – 2021</span>
-                <h4>B.Sc. -Computer Science (Software Engineering)</h4>
-                <p>Faculty of Sciences of Sfax, Tunisia</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">2014 – 2017</span>
-                <h4>High School Diploma -Science Series D</h4>
-                <p>Lycée La Grâce de Sokodé, Togo</p>
-              </div>
-            </div>
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Full-Stack Developer</h3>
+            <p class="subtitle">SuiSco Sarl · Lomé, Togo</p>
+          </div>
+          <div class="card-meta">
+            <span class="year">June 2025 – Present</span>
           </div>
         </div>
-        <div class="journey-col" data-reveal="slide-left">
-          <h3 class="journey-col-title"><i class="fas fa-briefcase"></i> Experience</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot dot-accent"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">June 2025 -Present</span>
-                <h4>Full Stack Developer</h4>
-                <p class="company">SuiSco Sarl</p>
-                <ul class="timeline-bullets">
-                  <li>Build and maintain web applications using PHP Laravel and Nuxt.js / Next.js</li>
-                  <li>Designed and integrated a centralized SSO solution with Keycloak across multiple services</li>
-                  <li>Developed RESTful APIs and business logic modules within distributed architectures</li>
-                </ul>
-                <div class="timeline-tags">
-                  <span>PHP Laravel</span><span>SSO Keycloak</span>
-                  <span>Nuxt.js</span><span>Next.js</span>
-                </div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot dot-accent"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">Jan 2024 -Dec 2024</span>
-                <h4>Full Stack & Mobile Developer</h4>
-                <p class="company">Djagora</p>
-                <ul class="timeline-bullets">
-                  <li>Built an internship management platform with React + Node.js API and React Native mobile app</li>
-                  <li>Designed MySQL database schema for student internship offer and application tracking</li>
-                </ul>
-                <div class="timeline-tags">
-                  <span>React</span><span>Node.js</span>
-                  <span>React Native</span><span>MySQL</span>
-                </div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot dot-accent"></div>
-              <div class="timeline-content">
-                <span class="timeline-year">June 2021 -Dec 2021</span>
-                <h4>Full Stack & Big Data Developer</h4>
-                <p class="company">DK-Soft</p>
-                <ul class="timeline-bullets">
-                  <li>Built an Angular app for real-time social media data extraction and visualization using ELK Stack</li>
-                  <li>Processed large-scale datasets with Hadoop and Apache Spark</li>
-                </ul>
-                <div class="timeline-tags">
-                  <span>Hadoop</span><span>Spark</span>
-                  <span>ELK Stack</span><span>Angular</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul class="details">
+          <li>Built and maintained <strong>SuiSco My Account</strong>, a multi-client web application using PHP Laravel</li>
+          <li>Built a <strong>Quiz App</strong> with Nuxt.js / Next.js frontend and Hono.js / Deno.js backend, serving multiple business clients</li>
+          <li>Designed and integrated a centralized <strong>Single Sign-On (SSO)</strong> solution with Keycloak, reducing authentication overhead across services</li>
+          <li>Developed RESTful APIs and business logic modules within distributed multi-service architectures</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section class="section section-alt" id="projects">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-number">04</span>
-        <span class="section-label">Projects</span>
-        <h2 class="section-title">My Work</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card" data-reveal="fade-up" data-delay="0">
-          <div class="project-thumb">
-            <div class="project-icon"><i class="fas fa-briefcase"></i></div>
-          </div>
-          <div class="project-body">
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="card project-card">
+        <div class="card-header">
+          <div>
             <h3>Internship Management Platform</h3>
-            <p>Full web and mobile platform for managing student internships -job postings, applications and tracking. React frontend, Node.js API, React Native mobile app.</p>
-            <div class="project-tech">
-              <span>React</span><span>Node.js</span><span>MySQL</span><span>React Native</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Shieldish/PFE--.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Frontend</a>
-              <a href="https://github.com/Shieldish/Gestion-Apps-final.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Mobile</a>
-            </div>
+            <p class="subtitle">Djagora  - Final Year Project (2024)</p>
+          </div>
+          <div class="card-meta">
+            <span class="tech-pill">React + Node.js</span>
+            <span class="tech-pill">React Native</span>
           </div>
         </div>
-        <div class="project-card" data-reveal="fade-up" data-delay="100">
-          <div class="project-thumb">
-            <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-          </div>
-          <div class="project-body">
-            <h3>Social Data Extraction & Visualization</h3>
-            <p>Analytics app for extracting and visualizing social media data, with external API integration and ELK Stack for real-time indexing and dashboards.</p>
-            <div class="project-tech">
-              <span>Angular</span><span>REST API</span><span>Chart.js</span><span>Elasticsearch</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Shieldish/test.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Frontend</a>
-              <a href="https://github.com/Shieldish/Api-test" target="_blank" class="project-link"><i class="fab fa-github"></i> API</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card coming-soon" data-reveal="fade-up" data-delay="200">
-          <div class="project-thumb">
-            <div class="project-icon"><i class="fas fa-rocket"></i></div>
-          </div>
-          <div class="project-body">
-            <h3>More projects coming soon</h3>
-            <p>New projects currently in development. Stay tuned!</p>
-            <div class="project-tech">
-              <span>Coming soon</span>
-            </div>
-          </div>
+        <p class="project-desc">
+          Web platform and mobile app for managing student internship offers, applications and tracking.
+          Built with React and Node.js / MySQL for the web side, React Native for the mobile app.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Shieldish/PFE--" target="_blank" class="gh-link">
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            PFE--
+          </a>
+          <a href="https://github.com/Shieldish/Gestion-Apps-final" target="_blank" class="gh-link">
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            Gestion-Apps-final
+          </a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-number">05</span>
-        <span class="section-label">Contact</span>
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info" data-reveal="slide-right">
-          <h3>Get in touch</h3>
-          <p>Have a project in mind? Looking to collaborate? Don't hesitate to reach out!</p>
-          <div class="contact-list">
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-              <div>
-                <span class="contact-item-label">Email</span>
-                <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
-              <div>
-                <span class="contact-item-label">Phone</span>
-                <a href="tel:+22890847768">+228 90847768</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <span class="contact-item-label">Location</span>
-                <span>Lomé, Togo 🇹🇬</span>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fab fa-github"></i></div>
-              <div>
-                <span class="contact-item-label">GitHub</span>
-                <a href="https://github.com/Shieldish" target="_blank">github.com/Shieldish</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fab fa-linkedin"></i></div>
-              <div>
-                <span class="contact-item-label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank">Samuel Gabiam</a>
-              </div>
-            </div>
+      <div class="card project-card">
+        <div class="card-header">
+          <div>
+            <h3>Social Data Extraction &amp; Visualization</h3>
+            <p class="subtitle">DK-Soft  - Internship Project (2021)</p>
+          </div>
+          <div class="card-meta">
+            <span class="tech-pill">Angular</span>
+            <span class="tech-pill">ELK Stack</span>
           </div>
         </div>
-        <form class="contact-form" id="contactForm" data-reveal="slide-left" action="https://formspree.io/f/xwvywdvz" method="POST">
-          <div class="form-group">
-            <input type="text" id="formName" name="name" placeholder=" " required />
-            <label for="formName">Your name</label>
+        <p class="project-desc">
+          Angular application for real-time extraction and visualization of social media data using
+          ELK Stack (Elasticsearch, Logstash, Kibana) and external APIs.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Shieldish/test" target="_blank" class="gh-link">
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            test
+          </a>
+          <a href="https://github.com/Shieldish/Api-test" target="_blank" class="gh-link">
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            Api-test
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <h2>Education</h2>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Professional Master's Degree</h3>
+            <p class="subtitle">Information Systems Engineering</p>
+            <p class="specialty">Specialization: Systems, Networks &amp; Cloud Computing</p>
+          </div>
+          <div class="card-meta">
+            <span class="year">2024</span>
+            <span class="mention mention-ab">Good Standing</span>
+          </div>
+        </div>
+        <p class="school">Faculty of Sciences of Sfax  - University of Sfax, Tunisia</p>
+        <ul class="details">
+          
+          <li>Distributed architectures, virtualization, cloud infrastructure</li>
+          <li>Linux system administration, network protocols, security</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Bachelor's Degree  - Computer Science</h3>
+            <p class="subtitle">Software Engineering &amp; Information Systems</p>
+          </div>
+          <div class="card-meta">
+            <span class="year">2022</span>
+            <span class="mention mention-ab">Good Standing</span>
+          </div>
+        </div>
+        <p class="school">Faculty of Sciences of Sfax  - University of Sfax, Tunisia</p>
+        <ul class="details">
+          <li>Algorithms, data structures, databases</li>
+          <li>Software development, software engineering, UML</li>
+          <li>Operating systems, computer networks</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>High School Diploma  - Science Series D</h3>
+          </div>
+          <div class="card-meta">
+            <span class="year">2014 – 2017</span>
+          </div>
+        </div>
+        <p class="school">Lycée La Grâce de Sokodé, Togo</p>
+      </div>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <ul>
+            <li>React / Next.js</li>
+            <li>Vue.js / Nuxt.js</li>
+            <li>Angular</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <ul>
+            <li>Node.js / Express.js</li>
+            <li>PHP Laravel</li>
+            <li>REST API</li>
+            <li>Python</li>
+            <li>GraphQL</li>
+            
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Mobile</h4>
+          <ul>
+            <li>React Native</li>
+            <li>Flutter</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Databases</h4>
+          <ul>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Elasticsearch</li>
+            <li>Redis</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Systems & Cloud</h4>
+          <ul>
+            <li>Linux / Unix</li>
+            <li>Docker</li>
+            <li>Cloud Computing</li>
+            <li>Keycloak / SSO</li>
+            <li>ELK Stack</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>DevOps & Tools</h4>
+          <ul>
+            <li>Git / GitHub / GitLab</li>
+            <li>CI/CD</li>
+            <li>Virtualization</li>
+            <li>Agile / Scrum</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Open to remote opportunities, full-time positions, and freelance projects.</p>
+
+      <div class="contact-layout">
+
+        <!-- Info column -->
+        <div class="contact-info">
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <span>+228 90 84 77 68</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Location</span>
+              <span>Lomé, Togo · Available Worldwide</span>
+            </div>
+          </div>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/samuel-g-107663165/" class="btn" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Shieldish" class="btn btn-outline" target="_blank">GitHub</a>
+            <a href="https://shieldish.github.io/portfolio/" class="btn btn-outline" target="_blank">Portfolio v1</a>
+            <a href="https://portfolio.gabiam-k-samuel.workers.dev/" class="btn btn-outline" target="_blank">Portfolio v2</a>
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/xwvywdvz"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formName">Name</label>
+              <input type="text" id="formName" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email</label>
+              <input type="email" id="formEmail" name="email" placeholder="your@email.com" required />
+            </div>
           </div>
           <div class="form-group">
-            <input type="email" id="formEmail" name="email" placeholder=" " required />
-            <label for="formEmail">Your email</label>
-          </div>
-          <div class="form-group">
-            <input type="text" id="formSubject" name="subject" placeholder=" " />
             <label for="formSubject">Subject</label>
+            <input type="text" id="formSubject" name="subject" placeholder="How can I help?" required />
           </div>
           <div class="form-group">
-            <textarea id="formMessage" name="message" rows="5" placeholder=" " required></textarea>
-            <label for="formMessage">Your message</label>
+            <label for="formMessage">Message</label>
+            <textarea id="formMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
           </div>
-          <div class="form-status" id="formStatus"></div>
-          <button type="submit" class="btn btn-primary btn-submit" id="formSubmitBtn">
-            <span>Send message</span>
-            <i class="fas fa-paper-plane"></i>
+          <div id="formStatus" class="form-status"></div>
+          <button type="submit" id="formSubmitBtn" class="btn form-btn">
+            Send Message
           </button>
         </form>
-      </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-top">
-        <a href="#" class="footer-logo">GKS<span class="nav-logo-dot"></span></a>
-        <div class="footer-social">
-          <a href="https://github.com/Shieldish" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/samuel-gabiam-107663165/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:gabiam.k.samuel@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+22890847768" aria-label="Phone"><i class="fas fa-phone"></i></a>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 GABIAM Kossi Samuel -All rights reserved</p>
-        <p class="footer-made"><i class="fas fa-code"></i> Designed & built with passion</p>
-      </div>
-    </div>
+    </section>
+
+  </main>
+
+  <!-- THEME PICKER -->
+  <div class="theme-picker" role="group" aria-label="Choose color theme">
+    <button class="theme-dot active" data-theme="aqua"     title="Aqua Depth"></button>
+    <button class="theme-dot"        data-theme="purple"   title="Purple Rose"></button>
+    <button class="theme-dot"        data-theme="pink"     title="Pink Flame"></button>
+    <button class="theme-dot"        data-theme="lavender" title="Lavender Dream"></button>
+    <button class="theme-dot"        data-theme="sunset"   title="Sunset"></button>
+  </div>
+
+  <footer>
+    <p>© 2025 Kossi Samuel Gabiam  - All rights reserved</p>
   </footer>
 
-  <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <script>
+    // Theme switcher
+    const dots = document.querySelectorAll('.theme-dot');
+    const saved = localStorage.getItem('theme') || 'aqua';
+    document.documentElement.setAttribute('data-theme', saved);
+    dots.forEach(d => d.classList.toggle('active', d.dataset.theme === saved));
 
-  <script src="script.js"></script>
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const theme = dot.dataset.theme;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        dots.forEach(d => d.classList.toggle('active', d === dot));
+      });
+    });
+
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = document.getElementById('formSubmitBtn');
+        const statusEl = document.getElementById('formStatus');
+        const originalHTML = btn?.innerHTML;
+
+        if (btn) {
+          btn.innerHTML = 'Sending...';
+          btn.disabled = true;
+        }
+        if (statusEl) statusEl.className = 'form-status';
+
+        try {
+          const data = new FormData(contactForm);
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: data,
+            headers: { Accept: 'application/json' }
+          });
+
+          if (res.ok) {
+            if (statusEl) {
+              statusEl.textContent = 'Message sent! I will get back to you as soon as possible.';
+              statusEl.className = 'form-status success';
+            }
+            contactForm.reset();
+            setTimeout(() => { if (statusEl) statusEl.className = 'form-status'; }, 5000);
+          } else {
+            throw new Error('server');
+          }
+        } catch {
+          if (statusEl) {
+            statusEl.textContent = 'Sending failed. Contact me directly: gabiam.k.samuel@gmail.com';
+            statusEl.className = 'form-status error';
+          }
+        } finally {
+          if (btn) {
+            btn.innerHTML = originalHTML || '';
+            btn.disabled = false;
+          }
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
