@@ -377,6 +377,30 @@
       });
     });
 
+    // Visitor tracker
+    (function() {
+      const TRACKER_URL = 'https://portfolio-tracker.gabiam-k-samuel.workers.dev';
+      const startTime = Date.now();
+      const payload = {
+        page: location.pathname,
+        referrer: document.referrer,
+        userAgent: navigator.userAgent,
+      };
+
+      fetch(TRACKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, timeSpent: 'just arrived' })
+      }).catch(function() {});
+
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') {
+          var seconds = Math.round((Date.now() - startTime) / 1000);
+          navigator.sendBeacon(TRACKER_URL, JSON.stringify({ ...payload, timeSpent: seconds + 's' }));
+        }
+      });
+    })();
+
     // Contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
