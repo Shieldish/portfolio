@@ -7,6 +7,10 @@ cv_gabiam.toc
 cv_gabiam.fls
 cv_gabiam.fdb_latexmk
 
+# Diploma source files
+Diplômes_Master_Gabiam.md
+Diplômes_Licence_Gabiam.md
+
 # OS files
 .DS_Store
 Thumbs.db
