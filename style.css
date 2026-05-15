@@ -6,7 +6,22 @@
 }
 
 /* ===== THEMES ===== */
-:root, [data-theme="cyber"] {
+:root, [data-theme="beige"] {
+  --accent: #8b5c2a;
+  --accent-dim: rgba(139, 92, 42, 0.25);
+  --accent-glow: rgba(139, 92, 42, 0.08);
+  --surface: #f5f0e8;
+  --surface-raised: #fffdf8;
+  --surface-glass: rgba(255, 253, 248, 0.85);
+  --border: rgba(139, 92, 42, 0.15);
+  --border-hover: rgba(139, 92, 42, 0.35);
+  --text: #2c2418;
+  --text-muted: #7a6b5a;
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 42, 0.08) 0%, transparent 60%);
+  --dot-color: #8b5c2a;
+}
+
+[data-theme="cyber"] {
   --accent: #00f0d4;
   --accent-dim: #00f0d440;
   --accent-glow: rgba(0, 240, 212, 0.15);
@@ -73,7 +88,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--surface);
   color: var(--text);
   line-height: 1.65;
@@ -248,6 +263,7 @@ body::before {
   line-height: 1.05;
   letter-spacing: -2px;
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .hero-line {
@@ -1030,7 +1046,7 @@ main {
   border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.9rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: inherit;
   color: var(--text);
   background: var(--surface);
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -1126,6 +1142,7 @@ main {
 .theme-dot[data-theme="ember"]  { background: #ff9f43; }
 .theme-dot[data-theme="violet"] { background: #a78bfa; }
 .theme-dot[data-theme="rose"]   { background: #fb7185; }
+.theme-dot[data-theme="beige"]  { background: #e8dcc8; border: 1px solid #c4b59a; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -1168,6 +1185,35 @@ footer p {
 }
 
 .footer-links a:hover { color: var(--accent); }
+
+/* ===== BEIGE THEME OVERRIDES ===== */
+[data-theme="beige"] body::before {
+  opacity: 0.012;
+}
+
+[data-theme="beige"] .nav-cta {
+  color: #fffdf8;
+}
+
+[data-theme="beige"] .btn-primary {
+  color: #fffdf8;
+}
+
+[data-theme="beige"] .btn-glass:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="beige"] .project-card-inner:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06), 0 0 40px var(--accent-glow);
+}
+
+[data-theme="beige"] .theme-picker {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="beige"] .theme-dot.active {
+  border-color: var(--text);
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {

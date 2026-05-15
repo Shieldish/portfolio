@@ -6,7 +6,7 @@
   <title>Kossi Samuel Gabiam — Full-Stack & Cloud Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,7 +21,7 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="cv_gabiam.pdf" download class="nav-cta">Download CV</a>
+    <a href="cv_gabiam.pdf?v=2" download class="nav-cta">Download CV</a>
   </nav>
 
   <!-- HERO -->
@@ -387,10 +387,11 @@
 
   <!-- THEME PICKER -->
   <div class="theme-picker" role="group" aria-label="Choose color theme">
-    <button class="theme-dot active" data-theme="cyber"    title="Cyber Teal"></button>
+    <button class="theme-dot"        data-theme="cyber"    title="Cyber Teal"></button>
     <button class="theme-dot"        data-theme="ember"    title="Ember Gold"></button>
     <button class="theme-dot"        data-theme="violet"   title="Deep Violet"></button>
     <button class="theme-dot"        data-theme="rose"     title="Neon Rose"></button>
+    <button class="theme-dot active" data-theme="beige"    title="Beige Light"></button>
   </div>
 
   <footer>
@@ -407,7 +408,7 @@
   <script>
     // Theme switcher
     const dots = document.querySelectorAll('.theme-dot');
-    const saved = localStorage.getItem('theme') || 'cyber';
+    const saved = localStorage.getItem('theme') || 'beige';
     document.documentElement.setAttribute('data-theme', saved);
     dots.forEach(d => d.classList.toggle('active', d.dataset.theme === saved));
 
