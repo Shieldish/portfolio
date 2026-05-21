@@ -1,11 +1,11 @@
 # LaTeX build artifacts
-cv_gabiam.aux
-cv_gabiam.log
-cv_gabiam.out
-cv_gabiam.synctex.gz
-cv_gabiam.toc
-cv_gabiam.fls
-cv_gabiam.fdb_latexmk
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.fls
+*.fdb_latexmk
 
 # Diploma source files
 Diplômes_Master_Gabiam.md

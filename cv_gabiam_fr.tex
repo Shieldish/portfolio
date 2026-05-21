@@ -1,0 +1,201 @@
+%% ============================================================
+%%  CV - Kossi Samuel Gabiam (Version Française)
+%%  Compile: pdflatex cv_gabiam_fr.tex
+%% ============================================================
+\documentclass[11pt, a4paper]{article}
+
+% ── Packages ──────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+
+% ── Hyperlinks ────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+% ── Page numbering ────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage}
+
+% ── Section style ─────────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\scshape}
+  {}{0em}
+  {}
+  [\vspace{-6pt}\rule{\linewidth}{0.4pt}]
+\titlespacing{\section}{0pt}{14pt}{8pt}
+
+% ── List settings ─────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.4em,
+  itemsep=2pt,
+  topsep=3pt,
+  parsep=0pt,
+  label=-
+}
+
+% ── Helpers ───────────────────────────────────────────────
+\newcommand{\entry}[4]{%
+  \needspace{4\baselineskip}%
+  \noindent\textbf{#1} \hfill \textit{#2}\\[2pt]%
+  \ifx&#3&\else\noindent\textit{#3}\\[1pt]\fi
+  \ifx&#4&\else\noindent{#4}\fi
+  \vspace{8pt}\par
+}
+
+% =============================================================
+\begin{document}
+
+% ── EN-TÊTE ───────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Kossi Samuel Gabiam}\\[6pt]
+  {\large Développeur Full-Stack~\textbullet~Ingénieur Systèmes \& Cloud}\\[10pt]
+  \small
+  gabiam.k.samuel@gmail.com
+  ~\textbullet~
+  +228 90 84 77 68
+  ~\textbullet~
+  Lomé, Togo~-~Disponible Partout (Télétravail)\\[3pt]
+  \href{https://www.linkedin.com/in/samuel-g-107663165/}{linkedin.com/in/samuel-g-107663165}
+  ~\textbullet~
+  \href{https://github.com/Shieldish}{github.com/Shieldish}
+  ~\textbullet~
+  \href{https://portfolio.gabiam-k-samuel.workers.dev/}{portfolio.gabiam-k-samuel.workers.dev}
+\end{center}
+
+\vspace{4pt}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{4pt}
+
+% ── PROFIL ────────────────────────────────────────────────────
+\section{Profil}
+
+Développeur Full-Stack titulaire d'un Master Professionnel en Systèmes et Réseaux, Cloud et
+Computing et d'une Licence en Informatique (Génie Logiciel \& Systèmes d'Information)
+de la Faculté des Sciences de Sfax, Tunisie.
+Expérimenté dans la conception et le développement d'applications web et mobiles, de systèmes
+distribués, d'API REST et d'infrastructures cloud. À l'aise sur l'ensemble de la chaîne~-~des
+services backend aux frameworks frontend modernes en passant par les pipelines DevOps.
+
+% ── EXPÉRIENCE ───────────────────────────────────────────────
+\section{Expérience Professionnelle}
+
+\entry{Développeur Full-Stack}{Juin 2025 - Présent}{SuiSco Sarl, Lomé, Togo}{}
+\begin{itemize}
+  \item Développement et maintenance de \textbf{SuiSco My Account}, application web multi-clients en PHP Laravel
+  \item Création d'une \textbf{application Quiz} avec frontend Nuxt.js / Next.js et backend Hono.js / Deno.js, déployée pour plusieurs clients professionnels
+  \item Conception et intégration d'une solution \textbf{SSO centralisée} avec Keycloak, réduisant la complexité d'authentification entre les services
+  \item Développement d'API RESTful et de modules métier au sein d'architectures multi-services distribuées
+\end{itemize}
+
+% ── FORMATION ────────────────────────────────────────────────
+\section{Formation}
+
+\needspace{10\baselineskip}
+\entry%
+  {Master Professionnel en Systèmes et Réseaux, Cloud et Computing}%
+  {2022 - 2024}%
+  {Faculté des Sciences de Sfax, Tunisie}%
+  {}
+\vspace{-6pt}
+\begin{itemize}
+  \item \textit{Domaine :} Sciences et Technologies
+  \item \textit{Filière :} Ingénierie des Systèmes Informatiques
+  \item \textit{Spécialité :} Systèmes, Réseaux \& Cloud Computing
+  \item Architectures distribuées, virtualisation, infrastructure cloud
+  \item Administration système Linux, protocoles réseau, sécurité
+\end{itemize}
+
+\vspace{6pt}
+
+\needspace{10\baselineskip}
+\entry%
+  {Licence Nationale en Informatique (Système LMD)}%
+  {2019 - 2022}%
+  {Faculté des Sciences de Sfax, Tunisie}%
+  {}
+\vspace{-6pt}
+\begin{itemize}
+  \item \textit{Domaine :} Sciences Exactes et Technologies
+  \item \textit{Filière :} Science de l'Informatique
+  \item \textit{Spécialité :} Génie Logiciel et Systèmes d'Information
+  \item Algorithmique, structures de données, bases de données, génie logiciel, UML
+  \item Systèmes d'exploitation, réseaux informatiques
+\end{itemize}
+
+\vspace{6pt}
+
+\entry%
+  {Baccalauréat - Série D (Sciences)}%
+  {2014 - 2017}%
+  {Lycée La Grâce de Sokodé, Togo}%
+  {}
+
+% ── PROJETS ──────────────────────────────────────────────────
+\section{Projets}
+
+\entry%
+  {Plateforme de Gestion de Stages}%
+  {2024}%
+  {Djagora - Projet de Fin d'Études}%
+  {}
+\vspace{-6pt}
+Plateforme web et application mobile pour la gestion des offres de stage, des candidatures
+et du suivi des étudiants. Développée avec React et Node.js/MySQL pour le web,
+React Native pour le mobile.\\
+\textit{Stack :} React, Node.js, MySQL, React Native\\
+\href{https://github.com/Shieldish/PFE-}{github.com/Shieldish/PFE-}
+~\textbullet~
+\href{https://github.com/Shieldish/Gestion-Apps-final}{github.com/Shieldish/Gestion-Apps-final}
+
+\vspace{10pt}
+
+\entry%
+  {Extraction et Visualisation de Données Sociales}%
+  {2021}%
+  {DK-Soft - Projet de Stage}%
+  {}
+\vspace{-6pt}
+Application Angular pour l'extraction et la visualisation en temps réel de données
+de réseaux sociaux via la pile ELK (Elasticsearch, Logstash, Kibana) et des API externes.\\
+\textit{Stack :} Angular, Elasticsearch, Logstash, Kibana\\
+\href{https://github.com/Shieldish/test}{github.com/Shieldish/test}
+~\textbullet~
+\href{https://github.com/Shieldish/Api-test}{github.com/Shieldish/Api-test}
+
+% ── COMPÉTENCES ──────────────────────────────────────────────
+\section{Compétences Techniques}
+
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{12pt}} X @{}}
+  Frontend      & React, Next.js, Vue.js, Nuxt.js, Angular, TypeScript, Tailwind CSS \\[4pt]
+  Backend       & Node.js, PHP Laravel, Hono.js, Deno.js, API REST, Python, Java \\[4pt]
+  Mobile        & React Native, Flutter \\[4pt]
+  Bases de données & MySQL, PostgreSQL, MongoDB, Elasticsearch, Redis \\[4pt]
+  Systèmes      & Linux/Unix, Docker, Cloud Computing, Keycloak/SSO, ELK Stack \\[4pt]
+  DevOps        & Git/GitHub/GitLab, CI/CD, Virtualisation, Agile/Scrum \\
+\end{tabularx}
+
+% ── LANGUES ──────────────────────────────────────────────────
+\section{Langues}
+
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{12pt}} X @{}}
+  Français  & Langue maternelle \\[4pt]
+  Anglais   & Compétence professionnelle \\
+\end{tabularx}
+
+\end{document}
