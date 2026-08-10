@@ -667,6 +667,37 @@ main {
   transform: translateY(0);
 }
 
+.project-card--featured {
+  grid-column: 1 / -1;
+}
+
+.project-card--featured .project-card-inner {
+  padding: 36px 40px;
+}
+
+.project-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.project-metrics span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+}
+
+.project-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .project-card:nth-child(2) { transition-delay: 0.1s; }
 
 .project-card-inner {
@@ -776,6 +807,115 @@ main {
 }
 
 .project-link svg { opacity: 0.7; }
+
+/* -- Project screenshot -- */
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  margin: 12px 0 18px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* -- EduBoost featured card extras -- */
+.project-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.project-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.project-badge--live {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding: 18px;
+  background: var(--accent-glow);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.project-feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.project-feature-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.project-feature div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-feature strong {
+  font-size: 0.83rem;
+  color: var(--text);
+}
+
+.project-feature span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.project-feature a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-feature a:hover {
+  text-decoration: underline;
+}
+
+.project-feature code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: var(--surface);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+.project-desc a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.project-desc a:hover {
+  text-decoration: underline;
+}
 
 /* ===== EDUCATION ===== */
 .edu-stack {

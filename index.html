@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kossi Samuel Gabiam — Full-Stack & Cloud Engineer</title>
+  <title>Kossi Samuel Gabiam - Full-Stack & Cloud Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,7 +22,7 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="cv_gabiam.pdf?v=2" download class="nav-cta">Download CV</a>
+    <a href="cv_gabiam.pdf?v=3" download class="nav-cta">Download CV</a>
   </nav>
 
   <!-- HERO -->
@@ -31,13 +32,13 @@
     <div class="hero-content">
       <div class="hero-eyebrow">
         <span class="status-dot"></span>
-        Available for Remote Work
+        Available Worldwide - Open to All Work Setups
       </div>
       <h1 class="hero-title">
         <span class="hero-line">Kossi Samuel</span>
         <span class="hero-line hero-line--accent">Gabiam</span>
       </h1>
-      <p class="hero-subtitle">Full-Stack Developer & Systems Engineer building distributed systems, cloud infrastructure, and modern web applications.</p>
+      <p class="hero-subtitle">Full-Stack Developer & Systems Engineer building distributed systems, production platforms at national scale, and modern web applications.</p>
       <div class="hero-meta">
         <span class="hero-meta-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -75,8 +76,8 @@
         <div class="about-grid">
           <div class="about-text">
             <h2 class="section-title">Building systems that scale.</h2>
-            <p>I hold a <strong>Professional Master's in Information Systems Engineering</strong> (specialization: Systems, Networks & Cloud Computing) and a <strong>Bachelor's in Computer Science</strong> (specialization: Software Engineering & Information Systems) from the Faculty of Sciences of Sfax, University of Sfax — Tunisia.</p>
-            <p>I design and build full-stack web and mobile applications, architect distributed systems, and deploy cloud infrastructure. I am comfortable across the entire stack — from REST API design and backend services to modern front-end frameworks and DevOps pipelines.</p>
+            <p>I hold a <strong>Professional Master's in Information Systems Engineering</strong> (specialization: Systems, Networks & Cloud Computing) and a <strong>Bachelor's in Computer Science</strong> (specialization: Software Engineering & Information Systems) from the Faculty of Sciences of Sfax, University of Sfax - Tunisia.</p>
+            <p>I design and build full-stack web and mobile applications, architect distributed systems, and deploy cloud infrastructure. I am comfortable across the entire stack - from REST API design and backend services to modern front-end frameworks and DevOps pipelines.</p>
           </div>
           <div class="about-stats">
             <div class="stat-card">
@@ -88,7 +89,7 @@
               <span class="stat-label">Technologies</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">5+</span>
+              <span class="stat-number">8+</span>
               <span class="stat-label">Projects Delivered</span>
             </div>
           </div>
@@ -109,22 +110,27 @@
               <div class="timeline-header">
                 <div>
                   <h3>Full-Stack Developer</h3>
-                  <p class="timeline-company">SuiSco Sarl · Lomé, Togo</p>
+                  <p class="timeline-company">SuiSco Sarl &middot; Lom&eacute;, Togo</p>
                 </div>
-                <span class="timeline-date">June 2025 — Present</span>
+                <span class="timeline-date">June 2025 - Present</span>
               </div>
               <ul class="timeline-details">
-                <li>Built and maintained <strong>SuiSco My Account</strong>, a multi-client web application using PHP Laravel</li>
-                <li>Built a <strong>Quiz App</strong> with Nuxt.js / Next.js frontend and Hono.js / Deno.js backend, serving multiple business clients</li>
-                <li>Designed and integrated a centralized <strong>Single Sign-On (SSO)</strong> solution with Keycloak, reducing authentication overhead across services</li>
-                <li>Developed RESTful APIs and business logic modules within distributed multi-service architectures</li>
+                <li>Architected and built <strong>EduBoost</strong> (<a href="https://www.eduboost.tg" target="_blank">eduboost.tg</a>), a national multi-channel lottery platform (web, SMS, USSD, mobile money MIXX/VAS) - live in production in Togo with 7 apps across 3 public domains</li>
+                <li>Designed the distributed architecture: <strong>15 Django write endpoints</strong> generating collision-free ticket codes (<code>SERVER_ID</code> + PostgreSQL sequence), plus <strong>1 central node</strong> for aggregated reads, draws and corporate accounts</li>
+                <li>Implemented <strong>Celery ~500 ms sync</strong> of local tickets to central PostgreSQL, crash-recovery task (30 s), HMAC-SHA256 operator webhook verification; async web generation (<code>request_id</code> polling) and synchronous SMS/USSD generation (&lt;50 ms)</li>
+                <li>Developed the corporate gifting portal <strong>Offrir</strong>: PDF generation, SMS/email OTP, secured claim flow, dual-proxy frontend routing</li>
+                <li>Built the <strong>4-phase live draw</strong>: bijective ticket anonymisation, OTP voting (<a href="https://soiree.eduboost.tg" target="_blank">soiree.eduboost.tg</a>), tireur selection (central admin), public draw (<a href="https://tirage.eduboost.tg" target="_blank">tirage.eduboost.tg</a>)</li>
+                <li>Built a multi-client <strong>Quiz App</strong> (Nuxt.js / Hono.js / Deno.js); maintained <strong>SuiSco My Account</strong> (PHP Laravel); integrated centralized <strong>Keycloak SSO</strong> (OAuth2/OIDC)</li>
               </ul>
               <div class="timeline-tags">
+                <span>Django 6</span>
+                <span>Nuxt 3</span>
+                <span>Celery</span>
+                <span>PostgreSQL 17</span>
+                <span>Redis</span>
+                <span>Docker</span>
                 <span>Laravel</span>
-                <span>Nuxt.js</span>
-                <span>Hono.js</span>
                 <span>Keycloak</span>
-                <span>Deno</span>
               </div>
             </div>
           </div>
@@ -140,11 +146,156 @@
 
         <div class="projects-grid">
 
+          <article class="project-card project-card--featured reveal">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-number">01</div>
+                <div class="project-badges">
+                  <span class="project-badge project-badge--live">&#9679; Live in Production</span>
+                  <span class="project-badge">7 apps</span>
+                  <span class="project-badge">3 domains</span>
+                </div>
+              </div>
+              <h3>EduBoost - La Grande Tombola pour l'&Eacute;ducation</h3>
+              <p class="project-org">SuiSco Sarl / YAS TOGO - 2025 - Present</p>
+              <img src="img/eduboost.png" alt="EduBoost platform screenshot" class="project-img" />
+              <p class="project-desc">National lottery platform built on a <strong>multi-endpoint + one central</strong> distributed architecture. 15 Django write nodes handle purchases across three channels; one central node aggregates all tickets, runs draws and manages corporate accounts. Live at <a href="https://www.eduboost.tg" target="_blank">eduboost.tg</a>.</p>
+
+              <div class="project-features">
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-diagram-3"></i></span>
+                  <div>
+                    <strong>Distributed Architecture</strong>
+                    <span>15 write nodes &rarr; 1 central. Collision-free ticket codes: <code>SERVER_ID</code> + PG sequence. Celery ~500 ms sync + 30 s crash-recovery.</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-phone"></i></span>
+                  <div>
+                    <strong>3 Purchase Channels</strong>
+                    <span>Web (async, <code>request_id</code> polling) - SMS/USSD (synchronous &lt;50 ms, idempotent <code>ref_id</code>) - Mobile money MIXX &amp; VAS (HMAC-SHA256 webhooks).</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-gift"></i></span>
+                  <div>
+                    <strong>Offrir - Corporate Gifting Portal</strong>
+                    <span>PDF generation, SMS/email OTP (stored on central via secured internal route), claim flow, dual-proxy frontend routing.</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-bullseye"></i></span>
+                  <div>
+                    <strong>4-Phase Live Draw</strong>
+                    <span>Bijective ticket anonymisation &rarr; OTP voting (<a href="https://soiree.eduboost.tg" target="_blank">soiree.eduboost.tg</a>) &rarr; tireur selection (admin) &rarr; public draw (<a href="https://tirage.eduboost.tg" target="_blank">tirage.eduboost.tg</a>).</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-shield-lock"></i></span>
+                  <div>
+                    <strong>Security</strong>
+                    <span>HMAC-SHA256 webhooks, Redis OTP (endpoints) &amp; PostgreSQL OTP (central), Redis rate-limit, operator IP allowlist, SimpleJWT staff auth.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-metrics">
+                <span>15 write nodes</span>
+                <span>1 central node</span>
+                <span>~500 ms sync</span>
+                <span>&lt;50 ms SMS/USSD</span>
+                <span>7 apps</span>
+                <span>Web / SMS / USSD</span>
+              </div>
+              <div class="project-tech">
+                <span>Django 6</span>
+                <span>DRF</span>
+                <span>SimpleJWT</span>
+                <span>Nuxt 3</span>
+                <span>Vue 3</span>
+                <span>Pinia</span>
+                <span>PostgreSQL 17</span>
+                <span>Redis 7</span>
+                <span>Celery</span>
+                <span>Gunicorn</span>
+                <span>Docker</span>
+                <span>Tailwind</span>
+                <span>VueUse</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.eduboost.tg" target="_blank" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  eduboost.tg
+                </a>
+                <a href="https://soiree.eduboost.tg" target="_blank" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  soiree.eduboost.tg
+                </a>
+                <a href="https://tirage.eduboost.tg" target="_blank" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  tirage.eduboost.tg
+                </a>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">01</div>
+              <div class="project-number">02</div>
+              <h3>DefiQuiz</h3>
+              <p class="project-org">SuiSco Sarl / YAS TOGO - 2025</p>
+              <img src="img/defiquiz.png" alt="DefiQuiz platform screenshot" class="project-img" />
+              <p class="project-desc">Multi-client quiz platform with Nuxt.js / Next.js frontend and Hono.js / Deno.js backend. 5000+ questions across multiple knowledge domains, serving business clients in Togo.</p>
+              <div class="project-tech">
+                <span>Nuxt.js</span>
+                <span>Next.js</span>
+                <span>Hono.js</span>
+                <span>Deno</span>
+              </div>
+              <div class="project-links">
+                <a href="https://defiquiz.tg/" target="_blank" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  defiquiz.tg
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">03</div>
+              <h3>SuiSco My Account</h3>
+              <p class="project-org">SuiSco Sarl - 2025</p>
+              <p class="project-desc">Multi-client web application for account management, built with PHP Laravel and REST APIs.</p>
+              <div class="project-tech">
+                <span>PHP Laravel</span>
+                <span>REST API</span>
+                <span>MySQL</span>
+              </div>
+              <p class="project-note">Internal deployment</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">04</div>
+              <h3>Centralized SSO</h3>
+              <p class="project-org">SuiSco Sarl - 2025</p>
+              <p class="project-desc">Centralized Single Sign-On solution with Keycloak (OAuth2/OIDC), reducing authentication overhead across distributed services.</p>
+              <div class="project-tech">
+                <span>Keycloak</span>
+                <span>OAuth2</span>
+                <span>OIDC</span>
+              </div>
+              <p class="project-note">Internal deployment</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">05</div>
               <h3>Internship Management Platform</h3>
-              <p class="project-org">Djagora — Final Year Project (2024)</p>
+              <p class="project-org">Djagora - Final Year Project (2024)</p>
               <p class="project-desc">Web platform and mobile app for managing student internship offers, applications and tracking. Built with React and Node.js / MySQL for the web side, React Native for the mobile app.</p>
               <div class="project-tech">
                 <span>React</span>
@@ -167,9 +318,9 @@
 
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">02</div>
+              <div class="project-number">06</div>
               <h3>Social Data Extraction & Visualization</h3>
-              <p class="project-org">DK-Soft — Internship Project (2021)</p>
+              <p class="project-org">DK-Soft - Internship Project (2021)</p>
               <p class="project-desc">Angular application for real-time extraction and visualization of social media data using ELK Stack (Elasticsearch, Logstash, Kibana) and external APIs.</p>
               <div class="project-tech">
                 <span>Angular</span>
@@ -205,8 +356,8 @@
             <div class="edu-year">2024</div>
             <div class="edu-body">
               <h3>Professional Master's Degree</h3>
-              <p class="edu-field">Information Systems Engineering — Systems, Networks & Cloud Computing</p>
-              <p class="edu-school">Faculty of Sciences of Sfax — University of Sfax, Tunisia</p>
+              <p class="edu-field">Information Systems Engineering - Systems, Networks & Cloud Computing</p>
+              <p class="edu-school">Faculty of Sciences of Sfax - University of Sfax, Tunisia</p>
               <span class="edu-mention">Good Standing</span>
             </div>
           </div>
@@ -214,9 +365,9 @@
           <div class="edu-card reveal">
             <div class="edu-year">2022</div>
             <div class="edu-body">
-              <h3>Bachelor's Degree — Computer Science</h3>
+              <h3>Bachelor's Degree - Computer Science</h3>
               <p class="edu-field">Software Engineering & Information Systems</p>
-              <p class="edu-school">Faculty of Sciences of Sfax — University of Sfax, Tunisia</p>
+              <p class="edu-school">Faculty of Sciences of Sfax - University of Sfax, Tunisia</p>
               <span class="edu-mention">Good Standing</span>
             </div>
           </div>
@@ -224,7 +375,7 @@
           <div class="edu-card reveal">
             <div class="edu-year">2017</div>
             <div class="edu-body">
-              <h3>High School Diploma — Science Series D</h3>
+              <h3>High School Diploma - Science Series D</h3>
               <p class="edu-school">Lycée La Grâce de Sokodé, Togo</p>
             </div>
           </div>
@@ -253,11 +404,13 @@
           <div class="skill-block reveal">
             <h4>Backend</h4>
             <div class="skill-items">
+              <span>Django / DRF</span>
+              <span>Celery</span>
+              <span>Gunicorn</span>
               <span>Node.js / Express.js</span>
               <span>PHP Laravel</span>
               <span>REST API</span>
               <span>Python</span>
-              <span>GraphQL</span>
             </div>
           </div>
 
@@ -285,7 +438,9 @@
             <div class="skill-items">
               <span>Linux / Unix</span>
               <span>Docker</span>
-              <span>Cloud Computing</span>
+              <span>Docker Compose</span>
+              <span>Distributed architectures</span>
+              <span>Load balancing</span>
               <span>Keycloak / SSO</span>
               <span>ELK Stack</span>
             </div>
@@ -337,7 +492,7 @@
               </span>
               <div>
                 <span class="contact-card-label">Location</span>
-                <span>Lomé, Togo — Available Worldwide</span>
+                <span>Lomé, Togo - Available Worldwide</span>
               </div>
             </div>
 
