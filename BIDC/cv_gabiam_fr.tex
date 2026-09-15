@@ -1,0 +1,203 @@
+%% ============================================================
+%%  CV - Kossi Samuel Gabiam (Version Française Haute Qualité)
+%%  Compile: pdflatex cv_gabiam_fr.tex
+%% ============================================================
+\documentclass[11pt, a4paper]{article}
+
+% ── Packages ──────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{mathptmx} % Times New Roman
+\usepackage[margin=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+
+% ── Couleurs ──────────────────────────────────────────────
+\definecolor{sectioncolor}{HTML}{1E40AF} % Bleu Marine Élégant (Grands Titres)
+\definecolor{secondary}{HTML}{475569}    % Gris Sombre (Numérotation & Métadonnées)
+\definecolor{linkcolor}{HTML}{1E40AF}    % Bleu pour les Liens
+
+% ── Hyperliens ────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor
+}
+
+% ── Numérotation de page ──────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{secondary}\thepage}
+
+% ── Style des Sections ────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{sectioncolor}\scshape}
+  {}{0em}
+  {}
+  [\vspace{-4pt}\color{sectioncolor}\rule{\linewidth}{1pt}]
+\titlespacing{\section}{0pt}{14pt}{6pt}
+
+% ── Configuration des Listes ──────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.3em,
+  itemsep=3pt,
+  topsep=2pt,
+  parsep=0pt,
+  label=\small\textbullet
+}
+
+% ── Macro Entrée CV ───────────────────────────────────────
+\newcommand{\cventry}[4]{%
+  \needspace{3\baselineskip}%
+  \noindent\textbf{\large #1} \hfill {\small\color{secondary}\textit{#2}}\\[2pt]%
+  \ifx&#3&\else\noindent\textbf{\textit{#3}}\\[3pt]\fi
+  \ifx&#4&\else\noindent{#4}\fi
+  \vspace{6pt}\par
+}
+
+% =============================================================
+\begin{document}
+\color{black} % Texte noir strictement dominant dans tout le document
+
+% ── EN-TÊTE ───────────────────────────────────────────────────
+\begin{center}
+  {\Huge\bfseries\scshape Kossi Samuel Gabiam}\\[6pt]
+  {\large\bfseries Systèmes, Réseaux \& Cloud \textbullet{} Développeur Full-Stack}\\[8pt]
+  \small
+  \href{mailto:gabiam.k.samuel@gmail.com}{gabiam.k.samuel@gmail.com}
+  \quad\textbullet\quad
+  +228 90 84 77 68
+  \quad\textbullet\quad
+  Lomé, Togo\\[3pt]
+  \href{https://www.linkedin.com/in/samuel-g-107663165/}{linkedin.com/in/samuel-g-107663165}
+  \quad\textbullet\quad
+  \href{https://github.com/Shieldish}{github.com/Shieldish}
+  \quad\textbullet\quad
+  \href{https://portfolio.gabiam-k-samuel.workers.dev/}{portfolio.gabiam-k-samuel.workers.dev}\\[4pt]
+  {\small\color{secondary}\textit{Disponible Partout : Télétravail, Présentiel \& Déplacement}}
+\end{center}
+
+\vspace{-2pt}
+\noindent\rule{\linewidth}{1pt}
+\vspace{6pt}
+
+% ── PROFIL ────────────────────────────────────────────────────
+\section{Profil Professionnel}
+
+Développeur Full-Stack expérimenté, titulaire d'un Master Professionnel en Systèmes, Réseaux \& Cloud Computing et d'une Licence en Génie Logiciel de la Faculté des Sciences de Sfax (Tunisie). Spécialisé dans la conception d'architectures distribuées hautement disponibles, le développement d'applications web/mobiles complexes et la mise en place d'infrastructures Cloud et pipelines DevOps.
+
+% ── EXPÉRIENCE PROFESSIONNELLE ────────────────────────────────
+\section{Expérience Professionnelle}
+
+\cventry{Développeur Full-Stack}{Juin 2025 - Présent}{SuiSco Sarl}{Lomé, Togo}
+\begin{itemize}
+  \item \textbf{EduBoost (\href{https://www.eduboost.tg}{eduboost.tg}) :} Architecture et développement complet de la plateforme nationale de tombola multi-canaux (Web, SMS, USSD, Mobile Money MIXX/VAS) actuellement en production au Togo.
+  \item \textbf{Architecture Distribuée :} Conception d'un système hautement disponible à 15 nœuds Django d'écriture avec génération de tickets anti-collision (\texttt{SERVER\_ID} + séquence PostgreSQL) et 1 nœud central d'agrégation.
+  \item \textbf{Flux Asynchrones \& Performance :} Synchronisation Celery $\sim$500 ms des tickets vers la base centrale, tâche de crash-recovery (30 s), génération Web asynchrone (polling \texttt{request\_id}) et SMS/USSD synchrone ($<$50 ms).
+  \item \textbf{Portail Offrir \& Sécurité :} Déploiement du portail entreprise (génération PDF, OTP SMS/email via route centrale sécurisée, claim), vérification HMAC-SHA256 des webhooks et rate-limiting Redis.
+  \item \textbf{Système de Tirage Live :} Définition du workflow en 4 phases avec anonymisation bijective des tickets, vote OTP (\href{https://soiree.eduboost.tg}{soiree.eduboost.tg}), sélection admin et écran de tirage public (\href{https://tirage.eduboost.tg}{tirage.eduboost.tg}).
+  \item \textbf{Projets Complémentaires :} Développement de la plateforme \textbf{DefiQuiz} (\href{https://defiquiz.tg/}{defiquiz.tg}), maintenance de l'application \textbf{SuiSco My Account} (PHP Laravel) et intégration du Single Sign-On centralisé \textbf{Keycloak} (OAuth2/OIDC).
+\end{itemize}
+
+% ── PROJETS MAJEURS ───────────────────────────────────────────
+\needspace{6\baselineskip}
+\section{Projets Majeurs}
+
+\cventry{EduBoost - Plateforme Nationale de Tombola}{2025 - Présent}{SuiSco Sarl / YAS TOGO}{Plateforme en Production}
+\begin{itemize}
+  \item \textbf{Architecture \& Échelle :} 15 nœuds d'écriture Django + 1 nœud central d'agrégation (7 applications, 3 domaines publics).
+  \item \textbf{Multi-Canaux d'Achat :} Web (asynchrone), SMS/USSD (synchrone $<$50 ms, idempotent par \texttt{ref\_id}) et Mobile Money (MIXX \& VAS avec webhooks HMAC-SHA256).
+  \item \textbf{Portail Entreprise Offrir :} Gestion des cadeaux d'entreprise, génération de reçus PDF et validation d'OTP centralisée.
+  \item \textbf{Système de Tirage Live :} Anonymisation bijective pré-tirage, portail de vote OTP et écran d'affichage du tirage en direct.
+  \item \textbf{Technologies Utilisées :} Django 6, DRF, SimpleJWT, Nuxt 3, Vue 3, Pinia, PostgreSQL 17, Redis 7, Celery, Gunicorn, Docker, Tailwind.
+  \item \textbf{Liens :} \href{https://www.eduboost.tg}{eduboost.tg} \quad\textbullet\quad \href{https://soiree.eduboost.tg}{soiree.eduboost.tg} \quad\textbullet\quad \href{https://tirage.eduboost.tg}{tirage.eduboost.tg}
+\end{itemize}
+
+\vspace{4pt}
+
+\cventry{DefiQuiz - Plateforme de Quiz Éducatif}{2025 - Présent}{SuiSco Sarl / YAS TOGO}{Plateforme Web}
+\begin{itemize}
+  \item \textbf{Description :} Application de quiz multi-clients en ligne proposant plus de 5 000 questions dans divers domaines de connaissances.
+  \item \textbf{Stack Technique :} Frontend Nuxt.js / Next.js, Backend Hono.js / Deno.js.
+  \item \textbf{Lien :} \href{https://defiquiz.tg/}{defiquiz.tg}
+\end{itemize}
+
+\vspace{4pt}
+
+\cventry{SuiSco My Account \& SSO Centralisé}{2025}{SuiSco Sarl}{Applications Internes}
+\begin{itemize}
+  \item \textbf{SuiSco My Account :} Application web multi-clients de gestion de comptes développée en PHP Laravel avec API REST et MySQL.
+  \item \textbf{SSO Keycloak :} Mise en place d'une solution d'authentification unique (Single Sign-On) basée sur Keycloak (OAuth2/OIDC) pour sécuriser l'accès aux microservices.
+\end{itemize}
+
+\vspace{4pt}
+
+\cventry{Plateforme de Gestion de Stages}{2024}{Djagora}{Projet de Fin d'Études}
+\begin{itemize}
+  \item \textbf{Description :} Application web et mobile pour la gestion des offres de stage, des candidatures et du suivi des étudiants.
+  \item \textbf{Technologies :} React, Node.js, MySQL (Web) et React Native (Mobile).
+  \item \textbf{Code Source :} \href{https://github.com/Shieldish/PFE-}{github.com/Shieldish/PFE-} \quad\textbullet\quad \href{https://github.com/Shieldish/Gestion-Apps-final}{github.com/Shieldish/Gestion-Apps-final}
+\end{itemize}
+
+\vspace{4pt}
+
+\cventry{Extraction \& Visualisation de Données Sociales}{2021}{DK-Soft}{Projet de Stage}
+\begin{itemize}
+  \item \textbf{Description :} Application web pour l'extraction et la visualisation analytique en temps réel de données des réseaux sociaux.
+  \item \textbf{Technologies :} Angular, Elasticsearch, Logstash, Kibana (Stack ELK).
+  \item \textbf{Code Source :} \href{https://github.com/Shieldish/test}{github.com/Shieldish/test} \quad\textbullet\quad \href{https://github.com/Shieldish/Api-test}{github.com/Shieldish/Api-test}
+\end{itemize}
+
+% ── FORMATION ────────────────────────────────────────────────
+\needspace{6\baselineskip}
+\section{Formation Académique}
+
+\cventry{Master Professionnel en Systèmes, Réseaux \& Cloud Computing}{2022 - 2024}{Faculté des Sciences de Sfax}{Sfax, Tunisie}
+\begin{itemize}
+  \item Ingénierie des Systèmes Informatiques - Architectures distribuées, virtualisation, cloud computing, administration système Linux et sécurité réseau.
+\end{itemize}
+
+\vspace{4pt}
+
+\cventry{Licence Nationale en Science de l'Informatique}{2019 - 2022}{Faculté des Sciences de Sfax}{Sfax, Tunisie}
+\begin{itemize}
+  \item Spécialité Génie Logiciel \& Systèmes d'Information - Algorithmique, bases de données, UML, génie logiciel et réseaux informatiques.
+\end{itemize}
+
+\vspace{4pt}
+
+\cventry{Baccalauréat Scientifique - Série D}{2014 - 2017}{Lycée La Grâce}{Sokodé, Togo}{}
+
+% ── COMPÉTENCES TECHNIQUES ────────────────────────────────────
+\needspace{6\baselineskip}
+\section{Compétences Techniques}
+
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{14pt}} X @{}}
+  Frontend      & React, Next.js, Vue.js, Nuxt 3, Angular, TypeScript, Tailwind CSS \\[4pt]
+  Backend       & Django, DRF, Celery, Gunicorn, Node.js, PHP Laravel, Hono.js, Deno.js, API REST, Python \\[4pt]
+  Mobile        & React Native, Flutter \\[4pt]
+  Bases de données & PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch \\[4pt]
+  Systèmes \& Cloud & Linux/Unix, Docker, Docker Compose, Architectures distribuées, Keycloak (SSO), ELK \\[4pt]
+  DevOps \& Méthodes & Git, GitHub, GitLab, Pipelines CI/CD, Virtualisation, Agile / Scrum \\
+\end{tabularx}
+
+% ── LANGUES ──────────────────────────────────────────────────
+\vspace{6pt}
+\section{Langues}
+
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{14pt}} X @{}}
+  Français  & Langue maternelle \\[3pt]
+  Anglais   & Compétence professionnelle \\
+\end{tabularx}
+
+\end{document}
+
