@@ -1,148 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kossi Samuel Gabiam - Full-Stack & Cloud Engineer</title>
+  <title>Kossi Samuel Gabiam - Full-Stack &amp; Cloud Engineer</title>
+  <meta name="description" content="Kossi Samuel Gabiam - Full-stack developer and systems engineer in Lomé, Togo. Distributed systems, production platforms and modern web and mobile applications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kossi Samuel Gabiam - Full-Stack &amp; Cloud Engineer" />
+  <meta property="og:description" content="Full-stack developer and systems engineer building distributed systems and production platforms at national scale." />
+  <meta property="og:image" content="img/profile.webp" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%23ffb400'%3EKSG%3C/text%3E%3C/svg%3E" />
+  <script>
+    // Apply saved skin before first paint (no flash)
+    document.documentElement.classList.add('js');
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-brand">KSG</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="cv_gabiam.pdf?v=3" download class="nav-cta">Download CV</a>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero" id="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span class="status-dot"></span>
-        Available Worldwide - Open to All Work Setups
-      </div>
-      <h1 class="hero-title">
-        <span class="hero-line">Kossi Samuel</span>
-        <span class="hero-line hero-line--accent">Gabiam</span>
-      </h1>
-      <p class="hero-subtitle">Full-Stack Developer & Systems Engineer building distributed systems, production platforms at national scale, and modern web applications.</p>
-      <div class="hero-meta">
-        <span class="hero-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Lomé, Togo
-        </span>
-        <span class="hero-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          gabiam.k.samuel@gmail.com
-        </span>
-      </div>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        <a href="https://github.com/Shieldish" target="_blank" class="btn btn-glass">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" class="btn btn-glass">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#started-section" class="brand">KSG<span>.</span></a>
+    <div class="header-actions">
+      <button class="switcher-btn" id="themeToggle" type="button" aria-label="Toggle light / dark mode">
+        <i class="bi bi-moon-stars-fill icon-moon"></i>
+        <i class="bi bi-sun-fill icon-sun"></i>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <!-- FULL-SCREEN MENU -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-inner">
+      <nav>
+        <ul class="menu-full">
+          <li><a href="#started-section" data-split="chars">Home</a></li>
+          <li><a href="#services-section" data-split="chars">Services</a></li>
+          <li><a href="#skills-section" data-split="chars">Skills</a></li>
+          <li><a href="#works-section" data-split="chars">Works</a></li>
+          <li><a href="#resume-section" data-split="chars">Resume</a></li>
+          <li><a href="#contact-section" data-split="chars">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-social">
+        <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Shieldish" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="mailto:gabiam.k.samuel@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+    </div>
+  </div>
+
   <main>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section-inner">
-        <div class="section-label">01 / About</div>
-        <div class="about-grid">
-          <div class="about-text">
-            <h2 class="section-title">Building systems that scale.</h2>
-            <p>I hold a <strong>Professional Master's in Information Systems Engineering</strong> (specialization: Systems, Networks & Cloud Computing) and a <strong>Bachelor's in Computer Science</strong> (specialization: Software Engineering & Information Systems) from the Faculty of Sciences of Sfax, University of Sfax - Tunisia.</p>
-            <p>I design and build full-stack web and mobile applications, architect distributed systems, and deploy cloud infrastructure. I am comfortable across the entire stack - from REST API design and backend services to modern front-end frameworks and DevOps pipelines.</p>
+    <!-- HERO -->
+    <section class="section hero" id="started-section">
+      <div class="bg-title" aria-hidden="true">Developer</div>
+      <div class="v-line v-line-left"></div>
+      <div class="container hero-grid">
+        <div class="hero-content" data-animate>
+          <div class="lui-subtitle">Hello, <b>my name is</b></div>
+          <h1 class="hero-name" data-split="chars"><b>Kossi Samuel</b> Gabiam</h1>
+          <div class="hero-role lui-subtitle">I am <strong>a Full-Stack &amp; Cloud Engineer</strong></div>
+          <div class="hero-desc">
+            <p>I build distributed systems, production platforms at national scale and modern web and mobile applications. I work mainly with <b>Python</b>, <b>Django</b>, <b>JavaScript</b>, <b>Vue / Nuxt</b>, <b>React</b>, <b>Node.js</b> and <b>Docker</b>, and I hold a Professional Master's in Information Systems Engineering.</p>
+            <p>Based in Lom&eacute;, Togo &mdash; <span class="status-dot"></span> available worldwide. Write to me at <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>.</p>
           </div>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-number">3+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Technologies</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">8+</span>
-              <span class="stat-label">Projects Delivered</span>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/Shieldish" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:gabiam.k.samuel@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+          </div>
+          <div class="bts">
+            <a href="cv_gabiam.pdf?v=3" download class="btn"><span>Download CV</span></a>
+            <a href="#skills-section" class="btn-lnk">My Skills</a>
+          </div>
+        </div>
+
+        <div class="hero-slide" data-animate>
+          <div class="photo-wrap">
+            <span class="circle circle-1"></span>
+            <span class="circle circle-2"></span>
+            <span class="circle circle-3"></span>
+            <img src="img/profile.webp" alt="Kossi Samuel Gabiam" class="photo" width="840" height="1050" fetchpriority="high" />
+            <div class="info-list">
+              <span class="num">3<strong>+</strong></span>
+              <span class="value">Years of <strong>Experience</strong></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <div class="section-inner">
-        <div class="section-label">02 / Experience</div>
-        <h2 class="section-title">Where I've worked.</h2>
+    <!-- SERVICES -->
+    <section class="section" id="services-section">
+      <div class="container">
+        <div class="m-titles" data-animate>
+          <h2 class="m-title" data-split="words">What I Do</h2>
+          <div class="m-subtitle">my <b>Services</b></div>
+        </div>
 
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <div>
-                  <h3>Full-Stack Developer</h3>
-                  <p class="timeline-company">SuiSco Sarl &middot; Lom&eacute;, Togo</p>
-                </div>
-                <span class="timeline-date">June 2025 - Present</span>
+        <div class="swiper services-swiper" data-animate>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="services-item">
+                <div class="lui-subtitle">Web Development</div>
+                <div class="icon"><i class="bi bi-window-stack"></i></div>
+                <h5 class="lui-title">Full-Stack Developer</h5>
+                <p>End-to-end web applications: REST APIs and backend services with Django and Node.js, and modern front ends with Vue / Nuxt, React and Next.js.</p>
               </div>
-              <ul class="timeline-details">
-                <li>Architected and built <strong>EduBoost</strong> (<a href="https://www.eduboost.tg" target="_blank">eduboost.tg</a>), a national multi-channel lottery platform (web, SMS, USSD, mobile money MIXX/VAS) - live in production in Togo with 7 apps across 3 public domains</li>
-                <li>Designed the distributed architecture: <strong>15 Django write endpoints</strong> generating collision-free ticket codes (<code>SERVER_ID</code> + PostgreSQL sequence), plus <strong>1 central node</strong> for aggregated reads, draws and corporate accounts</li>
-                <li>Implemented <strong>Celery ~500 ms sync</strong> of local tickets to central PostgreSQL, crash-recovery task (30 s), HMAC-SHA256 operator webhook verification; async web generation (<code>request_id</code> polling) and synchronous SMS/USSD generation (&lt;50 ms)</li>
-                <li>Developed the corporate gifting portal <strong>Offrir</strong>: PDF generation, SMS/email OTP, secured claim flow, dual-proxy frontend routing</li>
-                <li>Built the <strong>4-phase live draw</strong>: bijective ticket anonymisation, OTP voting (<a href="https://soiree.eduboost.tg" target="_blank">soiree.eduboost.tg</a>), tireur selection (central admin), public draw (<a href="https://tirage.eduboost.tg" target="_blank">tirage.eduboost.tg</a>)</li>
-                <li>Built a multi-client <strong>Quiz App</strong> (Nuxt.js / Hono.js / Deno.js); maintained <strong>SuiSco My Account</strong> (PHP Laravel); integrated centralized <strong>Keycloak SSO</strong> (OAuth2/OIDC)</li>
-              </ul>
-              <div class="timeline-tags">
-                <span>Django 6</span>
-                <span>Nuxt 3</span>
-                <span>Celery</span>
-                <span>PostgreSQL 17</span>
-                <span>Redis</span>
-                <span>Docker</span>
-                <span>Laravel</span>
-                <span>Keycloak</span>
+            </div>
+            <div class="swiper-slide">
+              <div class="services-item">
+                <div class="lui-subtitle">Architecture</div>
+                <div class="icon"><i class="bi bi-diagram-3"></i></div>
+                <h5 class="lui-title">Distributed Systems</h5>
+                <p>Multi-node architectures with collision-free IDs, Celery sync, crash recovery and secure webhooks &mdash; designed to run in production at national scale.</p>
               </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="services-item">
+                <div class="lui-subtitle">DevOps</div>
+                <div class="icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                <h5 class="lui-title">Cloud &amp; DevOps</h5>
+                <p>Containerised deployments with Docker and Docker Compose, Linux servers, load balancing, CI/CD pipelines and monitoring with the ELK stack.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="services-item">
+                <div class="lui-subtitle">Mobile Apps</div>
+                <div class="icon"><i class="bi bi-phone"></i></div>
+                <h5 class="lui-title">Mobile Developer</h5>
+                <p>Cross-platform mobile applications with React Native and Flutter, connected to the same APIs as your web platform.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="services-item">
+                <div class="lui-subtitle">Security</div>
+                <div class="icon"><i class="bi bi-shield-lock"></i></div>
+                <h5 class="lui-title">Authentication &amp; SSO</h5>
+                <p>Centralised sign-on with Keycloak (OAuth2 / OIDC), JWT, OTP flows, rate limiting and HMAC-signed operator webhooks.</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills-section">
+      <div class="container">
+        <div class="m-titles" data-animate>
+          <h2 class="m-title" data-split="words">My Experience</h2>
+          <div class="m-subtitle">my <b>Skills</b></div>
+        </div>
+
+        <!-- Bars: edit the --level values (0-100) to match your own estimate -->
+        <div class="skill-bars" data-animate>
+          <div class="skill-bar" style="--level:90"><div class="skill-head"><span>Python / Django</span><em>90%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:85"><div class="skill-head"><span>JavaScript / TypeScript</span><em>85%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:85"><div class="skill-head"><span>Vue / Nuxt</span><em>85%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:75"><div class="skill-head"><span>React / Next.js</span><em>75%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:80"><div class="skill-head"><span>PostgreSQL / Redis</span><em>80%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:80"><div class="skill-head"><span>Docker / Linux</span><em>80%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:70"><div class="skill-head"><span>Laravel / PHP</span><em>70%</em></div><div class="track"><i></i></div></div>
+          <div class="skill-bar" style="--level:65"><div class="skill-head"><span>Mobile (React Native / Flutter)</span><em>65%</em></div><div class="track"><i></i></div></div>
+        </div>
+
+        <div class="skills-mosaic">
+          <div class="skill-block" data-animate>
+            <h4>Frontend</h4>
+            <div class="skill-items">
+              <span>React / Next.js</span>
+              <span>Vue.js / Nuxt.js</span>
+              <span>Angular</span>
+              <span>TypeScript</span>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-block" data-animate>
+            <h4>Backend</h4>
+            <div class="skill-items">
+              <span>Django / DRF</span>
+              <span>Celery</span>
+              <span>Gunicorn</span>
+              <span>Node.js / Express.js</span>
+              <span>PHP Laravel</span>
+              <span>REST API</span>
+              <span>Python</span>
+            </div>
+          </div>
+          <div class="skill-block" data-animate>
+            <h4>Mobile</h4>
+            <div class="skill-items">
+              <span>React Native</span>
+              <span>Flutter</span>
+            </div>
+          </div>
+          <div class="skill-block" data-animate>
+            <h4>Databases</h4>
+            <div class="skill-items">
+              <span>MySQL</span>
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+              <span>Elasticsearch</span>
+              <span>Redis</span>
+            </div>
+          </div>
+          <div class="skill-block" data-animate>
+            <h4>Systems &amp; Cloud</h4>
+            <div class="skill-items">
+              <span>Linux / Unix</span>
+              <span>Docker</span>
+              <span>Docker Compose</span>
+              <span>Distributed architectures</span>
+              <span>Load balancing</span>
+              <span>Keycloak / SSO</span>
+              <span>ELK Stack</span>
+            </div>
+          </div>
+          <div class="skill-block" data-animate>
+            <h4>DevOps &amp; Tools</h4>
+            <div class="skill-items">
+              <span>Git / GitHub / GitLab</span>
+              <span>CI/CD</span>
+              <span>Virtualization</span>
+              <span>Agile / Scrum</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="section-inner">
-        <div class="section-label">03 / Projects</div>
-        <h2 class="section-title">Selected work.</h2>
+    <!-- WORKS -->
+    <section class="section" id="works-section">
+      <div class="container">
+        <div class="m-titles" data-animate>
+          <h2 class="m-title" data-split="words">My Portfolio</h2>
+          <div class="m-subtitle">my <b>Works</b></div>
+        </div>
 
         <div class="projects-grid">
 
@@ -342,117 +448,75 @@
           </article>
 
         </div>
+
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <div class="section-inner">
-        <div class="section-label">04 / Education</div>
-        <h2 class="section-title">Academic background.</h2>
-
-        <div class="edu-stack">
-          <div class="edu-card reveal">
-            <div class="edu-year">2024</div>
-            <div class="edu-body">
-              <h3>Professional Master's Degree</h3>
-              <p class="edu-field">Information Systems Engineering - Systems, Networks & Cloud Computing</p>
-              <p class="edu-school">Faculty of Sciences of Sfax - University of Sfax, Tunisia</p>
-              <span class="edu-mention">Good Standing</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-year">2022</div>
-            <div class="edu-body">
-              <h3>Bachelor's Degree - Computer Science</h3>
-              <p class="edu-field">Software Engineering & Information Systems</p>
-              <p class="edu-school">Faculty of Sciences of Sfax - University of Sfax, Tunisia</p>
-              <span class="edu-mention">Good Standing</span>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-year">2017</div>
-            <div class="edu-body">
-              <h3>High School Diploma - Science Series D</h3>
-              <p class="edu-school">Lycée La Grâce de Sokodé, Togo</p>
-            </div>
-          </div>
+    <!-- RESUME -->
+    <section class="section" id="resume-section">
+      <div class="container">
+        <div class="m-titles" data-animate>
+          <h2 class="m-title" data-split="words">My Resume</h2>
+          <div class="m-subtitle">experience &amp; <b>education</b></div>
         </div>
-      </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="section-inner">
-        <div class="section-label">05 / Skills</div>
-        <h2 class="section-title">Tech stack.</h2>
-
-        <div class="skills-mosaic">
-          <div class="skill-block reveal">
-            <h4>Frontend</h4>
-            <div class="skill-items">
-              <span>React / Next.js</span>
-              <span>Vue.js / Nuxt.js</span>
-              <span>Angular</span>
-              <span>TypeScript</span>
-              <span>Tailwind CSS</span>
+        <div class="resume-cols">
+          <div class="resume-col">
+            <h3 class="col-title" data-animate>Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item" data-animate>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">June 2025 - Present</span>
+                  <h4>Full-Stack Developer</h4>
+                  <p class="timeline-company">SuiSco Sarl &middot; Lom&eacute;, Togo</p>
+                  <ul class="timeline-details">
+                    <li>Architected and built <strong>EduBoost</strong> (<a href="https://www.eduboost.tg" target="_blank" rel="noopener">eduboost.tg</a>), a national multi-channel lottery platform (web, SMS, USSD, mobile money MIXX/VAS) - live in production in Togo with 7 apps across 3 public domains</li>
+                    <li>Designed the distributed architecture: <strong>15 Django write endpoints</strong> generating collision-free ticket codes (<code>SERVER_ID</code> + PostgreSQL sequence), plus <strong>1 central node</strong> for aggregated reads, draws and corporate accounts</li>
+                    <li>Implemented <strong>Celery ~500 ms sync</strong> of local tickets to central PostgreSQL, crash-recovery task (30 s), HMAC-SHA256 operator webhook verification; async web generation (<code>request_id</code> polling) and synchronous SMS/USSD generation (&lt;50 ms)</li>
+                    <li>Developed the corporate gifting portal <strong>Offrir</strong>: PDF generation, SMS/email OTP, secured claim flow, dual-proxy frontend routing</li>
+                    <li>Built the <strong>4-phase live draw</strong>: bijective ticket anonymisation, OTP voting (<a href="https://soiree.eduboost.tg" target="_blank" rel="noopener">soiree.eduboost.tg</a>), tireur selection (central admin), public draw (<a href="https://tirage.eduboost.tg" target="_blank" rel="noopener">tirage.eduboost.tg</a>)</li>
+                    <li>Built a multi-client <strong>Quiz App</strong> (Nuxt.js / Hono.js / Deno.js); maintained <strong>SuiSco My Account</strong> (PHP Laravel); integrated centralized <strong>Keycloak SSO</strong> (OAuth2/OIDC)</li>
+                  </ul>
+                  <div class="timeline-tags">
+                    <span>Django 6</span><span>Nuxt 3</span><span>Celery</span><span>PostgreSQL 17</span><span>Redis</span><span>Docker</span><span>Laravel</span><span>Keycloak</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="skill-block reveal">
-            <h4>Backend</h4>
-            <div class="skill-items">
-              <span>Django / DRF</span>
-              <span>Celery</span>
-              <span>Gunicorn</span>
-              <span>Node.js / Express.js</span>
-              <span>PHP Laravel</span>
-              <span>REST API</span>
-              <span>Python</span>
-            </div>
-          </div>
-
-          <div class="skill-block reveal">
-            <h4>Mobile</h4>
-            <div class="skill-items">
-              <span>React Native</span>
-              <span>Flutter</span>
-            </div>
-          </div>
-
-          <div class="skill-block reveal">
-            <h4>Databases</h4>
-            <div class="skill-items">
-              <span>MySQL</span>
-              <span>PostgreSQL</span>
-              <span>MongoDB</span>
-              <span>Elasticsearch</span>
-              <span>Redis</span>
-            </div>
-          </div>
-
-          <div class="skill-block reveal">
-            <h4>Systems & Cloud</h4>
-            <div class="skill-items">
-              <span>Linux / Unix</span>
-              <span>Docker</span>
-              <span>Docker Compose</span>
-              <span>Distributed architectures</span>
-              <span>Load balancing</span>
-              <span>Keycloak / SSO</span>
-              <span>ELK Stack</span>
-            </div>
-          </div>
-
-          <div class="skill-block reveal">
-            <h4>DevOps & Tools</h4>
-            <div class="skill-items">
-              <span>Git / GitHub / GitLab</span>
-              <span>CI/CD</span>
-              <span>Virtualization</span>
-              <span>Agile / Scrum</span>
+          <div class="resume-col">
+            <h3 class="col-title" data-animate>Education</h3>
+            <div class="timeline">
+              <div class="timeline-item" data-animate>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2024</span>
+                  <h4>Professional Master's Degree</h4>
+                  <p class="timeline-company">Information Systems Engineering - Systems, Networks &amp; Cloud Computing</p>
+                  <p class="timeline-school">Faculty of Sciences of Sfax - University of Sfax, Tunisia</p>
+                  <div class="timeline-tags"><span>Good Standing</span></div>
+                </div>
+              </div>
+              <div class="timeline-item" data-animate>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2022</span>
+                  <h4>Bachelor's Degree - Computer Science</h4>
+                  <p class="timeline-company">Software Engineering &amp; Information Systems</p>
+                  <p class="timeline-school">Faculty of Sciences of Sfax - University of Sfax, Tunisia</p>
+                  <div class="timeline-tags"><span>Good Standing</span></div>
+                </div>
+              </div>
+              <div class="timeline-item" data-animate>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2017</span>
+                  <h4>High School Diploma - Science Series D</h4>
+                  <p class="timeline-school">Lyc&eacute;e La Gr&acirc;ce de Sokod&eacute;, Togo</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -460,56 +524,53 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="section-inner">
-        <div class="section-label">06 / Contact</div>
-        <h2 class="section-title">Let's connect.</h2>
-        <p class="section-desc">Open to remote opportunities, full-time positions, and freelance projects.</p>
+    <section class="section" id="contact-section">
+      <div class="container">
+        <div class="m-titles" data-animate>
+          <h2 class="m-title" data-split="words">Get in Touch</h2>
+          <div class="m-subtitle">let's <b>connect</b></div>
+        </div>
+
+        <div class="numbers" data-animate>
+          <div class="number-item"><span class="num"><span data-count="3">0</span>+</span><span class="value">Years of experience</span></div>
+          <div class="number-item"><span class="num"><span data-count="8">0</span>+</span><span class="value">Projects delivered</span></div>
+          <div class="number-item"><span class="num"><span data-count="10">0</span>+</span><span class="value">Technologies</span></div>
+        </div>
+
+        <p class="section-desc" data-animate>Open to remote opportunities, full-time positions, and freelance projects.</p>
 
         <div class="contact-layout">
-          <div class="contact-info">
+          <div class="contact-info" data-animate>
             <div class="contact-card">
-              <span class="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </span>
+              <span class="contact-icon"><i class="bi bi-envelope"></i></span>
               <div>
                 <span class="contact-card-label">Email</span>
                 <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>
               </div>
             </div>
             <div class="contact-card">
-              <span class="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </span>
+              <span class="contact-icon"><i class="bi bi-telephone"></i></span>
               <div>
                 <span class="contact-card-label">Phone</span>
                 <span>+228 90 84 77 68</span>
               </div>
             </div>
             <div class="contact-card">
-              <span class="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
+              <span class="contact-icon"><i class="bi bi-geo-alt"></i></span>
               <div>
                 <span class="contact-card-label">Location</span>
                 <span>Lomé, Togo - Available Worldwide</span>
               </div>
             </div>
-
             <div class="contact-socials">
-              <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" class="social-link">LinkedIn</a>
-              <a href="https://github.com/Shieldish" target="_blank" class="social-link">GitHub</a>
-              <a href="https://shieldish.github.io/portfolio/" target="_blank" class="social-link">Portfolio v1</a>
-              <a href="https://portfolio.gabiam-k-samuel.workers.dev/" target="_blank" class="social-link">Portfolio v2</a>
+              <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+              <a href="https://github.com/Shieldish" target="_blank" rel="noopener" class="social-link">GitHub</a>
+              <a href="https://shieldish.github.io/portfolio/" target="_blank" rel="noopener" class="social-link">Portfolio v1</a>
+              <a href="https://portfolio.gabiam-k-samuel.workers.dev/" target="_blank" rel="noopener" class="social-link">Portfolio v2</a>
             </div>
           </div>
 
-          <form
-            id="contactForm"
-            action="https://formspree.io/f/xwvywdvz"
-            method="POST"
-            class="contact-form"
-          >
+          <form id="contactForm" action="https://formspree.io/f/xwvywdvz" method="POST" class="contact-form" data-animate>
             <div class="form-row">
               <div class="form-group">
                 <label for="formName">Name</label>
@@ -529,10 +590,7 @@
               <textarea id="formMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
             <div id="formStatus" class="form-status"></div>
-            <button type="submit" id="formSubmitBtn" class="btn btn-primary form-btn">
-              Send Message
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
+            <button type="submit" id="formSubmitBtn" class="btn form-btn"><span>Send Message</span></button>
           </form>
         </div>
       </div>
@@ -540,78 +598,131 @@
 
   </main>
 
-  <!-- THEME PICKER -->
-  <div class="theme-picker" role="group" aria-label="Choose color theme">
-    <button class="theme-dot"        data-theme="cyber"    title="Cyber Teal"></button>
-    <button class="theme-dot"        data-theme="ember"    title="Ember Gold"></button>
-    <button class="theme-dot"        data-theme="violet"   title="Deep Violet"></button>
-    <button class="theme-dot"        data-theme="rose"     title="Neon Rose"></button>
-    <button class="theme-dot active" data-theme="beige"    title="Beige Light"></button>
-  </div>
-
   <footer>
-    <div class="footer-inner">
-      <span class="footer-brand">KSG</span>
-      <p>&copy; 2025 Kossi Samuel Gabiam</p>
+    <div class="container footer-inner">
+      <span class="footer-brand">KSG<span>.</span></span>
+      <p>&copy; <span id="year">2026</span> Kossi Samuel Gabiam</p>
       <div class="footer-links">
-        <a href="https://github.com/Shieldish" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Shieldish" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Theme switcher
-    const dots = document.querySelectorAll('.theme-dot');
-    const saved = localStorage.getItem('theme') || 'beige';
-    document.documentElement.setAttribute('data-theme', saved);
-    dots.forEach(d => d.classList.toggle('active', d.dataset.theme === saved));
+    (function () {
+      var root = document.documentElement;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const theme = dot.dataset.theme;
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        dots.forEach(d => d.classList.toggle('active', d === dot));
+      // ---------- Light / dark toggle ----------
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', next === 'dark' ? '#0e0e10' : '#ffffff');
       });
-    });
 
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('.reveal, .section-label, .section-title, .about-text p, .stat-card, .skill-block, .edu-card, .project-card, .contact-card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('revealed');
-          }, i * 80);
-          observer.unobserve(entry.target);
+      // ---------- Full-screen menu ----------
+      var menuBtn = document.getElementById('menuBtn');
+      var overlay = document.getElementById('menuOverlay');
+      function setMenu(open) {
+        document.body.classList.toggle('menu-open', open);
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+      }
+      menuBtn.addEventListener('click', function () { setMenu(!document.body.classList.contains('menu-open')); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+      overlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+
+      // ---------- Split text into chars / words ----------
+      document.querySelectorAll('[data-split]').forEach(function (el) {
+        var mode = el.getAttribute('data-split');
+        var idx = 0;
+        function wrap(node) {
+          Array.from(node.childNodes).forEach(function (child) {
+            if (child.nodeType === 3) {
+              var frag = document.createDocumentFragment();
+              var parts = mode === 'words' ? child.textContent.split(/(\s+)/) : Array.from(child.textContent);
+              parts.forEach(function (p) {
+                if (/^\s+$/.test(p) || p === '') { frag.appendChild(document.createTextNode(p)); return; }
+                var s = document.createElement('span');
+                s.className = mode === 'words' ? 'word' : 'char';
+                s.style.setProperty('--i', idx++);
+                s.textContent = p;
+                frag.appendChild(s);
+              });
+              node.replaceChild(frag, child);
+            } else if (child.nodeType === 1) {
+              wrap(child);
+            }
+          });
         }
+        el.setAttribute('aria-label', el.textContent.trim());
+        wrap(el);
+        el.querySelectorAll('.char, .word').forEach(function (s) { s.setAttribute('aria-hidden', 'true'); });
+        el.classList.add('is-split');
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach(el => observer.observe(el));
+      // ---------- Scroll reveal ----------
+      var targets = document.querySelectorAll('[data-animate], .reveal, .is-split, .skill-bar');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in-view', 'revealed');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      targets.forEach(function (el) { reduceMotion ? el.classList.add('in-view', 'revealed') : io.observe(el); });
 
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      nav.classList.toggle('nav--scrolled', currentScroll > 80);
-      lastScroll = currentScroll;
-    });
+      // ---------- Number counters ----------
+      var counters = document.querySelectorAll('[data-count]');
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target, end = +el.dataset.count, start = performance.now(), dur = 1200;
+          if (reduceMotion) { el.textContent = end; cio.unobserve(el); return; }
+          (function tick(now) {
+            var t = Math.min((now - start) / dur, 1);
+            el.textContent = Math.round(end * (1 - Math.pow(1 - t, 3)));
+            if (t < 1) requestAnimationFrame(tick);
+          })(start);
+          cio.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { cio.observe(el); });
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+      // ---------- Services slider ----------
+      if (window.Swiper) {
+        new Swiper('.services-swiper', {
+          slidesPerView: 1, spaceBetween: 24, grabCursor: true,
+          pagination: { el: '.services-swiper .swiper-pagination', clickable: true },
+          breakpoints: { 700: { slidesPerView: 2 }, 1100: { slidesPerView: 3 } }
+        });
+      }
+
+      // ---------- Header shadow on scroll ----------
+      var header = document.querySelector('.header');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('header--scrolled', window.scrollY > 40);
+      }, { passive: true });
+
+      // ---------- Smooth scroll ----------
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var target = document.querySelector(link.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+          }
+        });
       });
-    });
 
-    // Visitor tracker
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+
+    // ---------- Visitor tracker ----------
     (function() {
       const TRACKER_URL = 'https://portfolio-tracker.gabiam-k-samuel.workers.dev';
       const startTime = Date.now();
@@ -635,7 +746,7 @@
       });
     })();
 
-    // Contact form
+    // ---------- Contact form ----------
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', async e => {
@@ -645,7 +756,7 @@
         const originalHTML = btn?.innerHTML;
 
         if (btn) {
-          btn.innerHTML = 'Sending...';
+          btn.innerHTML = '<span>Sending...</span>';
           btn.disabled = true;
         }
         if (statusEl) statusEl.className = 'form-status';
