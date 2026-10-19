@@ -392,3 +392,7 @@ footer p { font-size: 0.9rem; color: var(--text-muted); }
   .timeline-content { padding: 22px; }
   .info-list { left: 0; }
 }
+
+/* ===== LANGUAGE BUTTON ===== */
+.lang-btn span { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px; }
+.lang-btn:hover { transform: none; }
