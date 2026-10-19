@@ -33,6 +33,7 @@
         <i class="bi bi-moon-stars-fill icon-moon"></i>
         <i class="bi bi-sun-fill icon-sun"></i>
       </button>
+      <button class="switcher-btn lang-btn" id="langToggle" type="button" aria-label="Passer en fran?ais"><span>FR</span></button>
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
         <span></span><span></span>
       </button>
@@ -72,8 +73,8 @@
           <h1 class="hero-name" data-split="chars"><b>Kossi Samuel</b> Gabiam</h1>
           <div class="hero-role lui-subtitle">I am <strong>a Full-Stack &amp; Cloud Engineer</strong></div>
           <div class="hero-desc">
-            <p>I build distributed systems, production platforms at national scale and modern web and mobile applications. I work mainly with <b>Python</b>, <b>Django</b>, <b>JavaScript</b>, <b>Vue / Nuxt</b>, <b>React</b>, <b>Node.js</b> and <b>Docker</b>, and I hold a Professional Master's in Information Systems Engineering.</p>
-            <p>Based in Lom&eacute;, Togo &mdash; <span class="status-dot"></span> available worldwide. Write to me at <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>.</p>
+            <p data-i18n="heroP1">I build distributed systems, production platforms at national scale and modern web and mobile applications. I work mainly with <b>Python</b>, <b>Django</b>, <b>JavaScript</b>, <b>Vue / Nuxt</b>, <b>React</b>, <b>Node.js</b> and <b>Docker</b>, and I hold a Professional Master's in Information Systems Engineering.</p>
+            <p data-i18n="heroP2">Based in Lom&eacute;, Togo &mdash; <span class="status-dot"></span> available worldwide. Write to me at <a href="mailto:gabiam.k.samuel@gmail.com">gabiam.k.samuel@gmail.com</a>.</p>
           </div>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/samuel-g-107663165/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -94,7 +95,7 @@
             <img src="img/profile.webp" alt="Kossi Samuel Gabiam" class="photo" width="840" height="1050" fetchpriority="high" />
             <div class="info-list">
               <span class="num">3<strong>+</strong></span>
-              <span class="value">Years of <strong>Experience</strong></span>
+              <span class="value" data-i18n="yearsExp">Years of <strong>Experience</strong></span>
             </div>
           </div>
         </div>
@@ -265,42 +266,42 @@
               <h3>EduBoost - La Grande Tombola pour l'&Eacute;ducation</h3>
               <p class="project-org">SuiSco Sarl / YAS TOGO - 2025 - Present</p>
               <img src="img/eduboost.png" alt="EduBoost platform screenshot" class="project-img" />
-              <p class="project-desc">National lottery platform built on a <strong>multi-endpoint + one central</strong> distributed architecture. 15 Django write nodes handle purchases across three channels; one central node aggregates all tickets, runs draws and manages corporate accounts. Live at <a href="https://www.eduboost.tg" target="_blank">eduboost.tg</a>.</p>
+              <p class="project-desc" data-i18n="ebDesc">National lottery platform built on a <strong>multi-endpoint + one central</strong> distributed architecture. 15 Django write nodes handle purchases across three channels; one central node aggregates all tickets, runs draws and manages corporate accounts. Live at <a href="https://www.eduboost.tg" target="_blank">eduboost.tg</a>.</p>
 
               <div class="project-features">
                 <div class="project-feature">
                   <span class="project-feature-icon"><i class="bi bi-diagram-3"></i></span>
                   <div>
                     <strong>Distributed Architecture</strong>
-                    <span>15 write nodes &rarr; 1 central. Collision-free ticket codes: <code>SERVER_ID</code> + PG sequence. Celery ~500 ms sync + 30 s crash-recovery.</span>
+                    <span data-i18n="ebF1">15 write nodes &rarr; 1 central. Collision-free ticket codes: <code>SERVER_ID</code> + PG sequence. Celery ~500 ms sync + 30 s crash-recovery.</span>
                   </div>
                 </div>
                 <div class="project-feature">
                   <span class="project-feature-icon"><i class="bi bi-phone"></i></span>
                   <div>
                     <strong>3 Purchase Channels</strong>
-                    <span>Web (async, <code>request_id</code> polling) - SMS/USSD (synchronous &lt;50 ms, idempotent <code>ref_id</code>) - Mobile money MIXX &amp; VAS (HMAC-SHA256 webhooks).</span>
+                    <span data-i18n="ebF2">Web (async, <code>request_id</code> polling) - SMS/USSD (synchronous &lt;50 ms, idempotent <code>ref_id</code>) - Mobile money MIXX &amp; VAS (HMAC-SHA256 webhooks).</span>
                   </div>
                 </div>
                 <div class="project-feature">
                   <span class="project-feature-icon"><i class="bi bi-gift"></i></span>
                   <div>
                     <strong>Offrir - Corporate Gifting Portal</strong>
-                    <span>PDF generation, SMS/email OTP (stored on central via secured internal route), claim flow, dual-proxy frontend routing.</span>
+                    <span data-i18n="ebF3">PDF generation, SMS/email OTP (stored on central via secured internal route), claim flow, dual-proxy frontend routing.</span>
                   </div>
                 </div>
                 <div class="project-feature">
                   <span class="project-feature-icon"><i class="bi bi-bullseye"></i></span>
                   <div>
                     <strong>4-Phase Live Draw</strong>
-                    <span>Bijective ticket anonymisation &rarr; OTP voting (<a href="https://soiree.eduboost.tg" target="_blank">soiree.eduboost.tg</a>) &rarr; tireur selection (admin) &rarr; public draw (<a href="https://tirage.eduboost.tg" target="_blank">tirage.eduboost.tg</a>).</span>
+                    <span data-i18n="ebF4">Bijective ticket anonymisation &rarr; OTP voting (<a href="https://soiree.eduboost.tg" target="_blank">soiree.eduboost.tg</a>) &rarr; tireur selection (admin) &rarr; public draw (<a href="https://tirage.eduboost.tg" target="_blank">tirage.eduboost.tg</a>).</span>
                   </div>
                 </div>
                 <div class="project-feature">
                   <span class="project-feature-icon"><i class="bi bi-shield-lock"></i></span>
                   <div>
                     <strong>Security</strong>
-                    <span>HMAC-SHA256 webhooks, Redis OTP (endpoints) &amp; PostgreSQL OTP (central), Redis rate-limit, operator IP allowlist, SimpleJWT staff auth.</span>
+                    <span data-i18n="ebF5">HMAC-SHA256 webhooks, Redis OTP (endpoints) &amp; PostgreSQL OTP (central), Redis rate-limit, operator IP allowlist, SimpleJWT staff auth.</span>
                   </div>
                 </div>
               </div>
@@ -471,12 +472,12 @@
                   <h4>Full-Stack Developer</h4>
                   <p class="timeline-company">SuiSco Sarl &middot; Lom&eacute;, Togo</p>
                   <ul class="timeline-details">
-                    <li>Architected and built <strong>EduBoost</strong> (<a href="https://www.eduboost.tg" target="_blank" rel="noopener">eduboost.tg</a>), a national multi-channel lottery platform (web, SMS, USSD, mobile money MIXX/VAS) - live in production in Togo with 7 apps across 3 public domains</li>
-                    <li>Designed the distributed architecture: <strong>15 Django write endpoints</strong> generating collision-free ticket codes (<code>SERVER_ID</code> + PostgreSQL sequence), plus <strong>1 central node</strong> for aggregated reads, draws and corporate accounts</li>
-                    <li>Implemented <strong>Celery ~500 ms sync</strong> of local tickets to central PostgreSQL, crash-recovery task (30 s), HMAC-SHA256 operator webhook verification; async web generation (<code>request_id</code> polling) and synchronous SMS/USSD generation (&lt;50 ms)</li>
-                    <li>Developed the corporate gifting portal <strong>Offrir</strong>: PDF generation, SMS/email OTP, secured claim flow, dual-proxy frontend routing</li>
-                    <li>Built the <strong>4-phase live draw</strong>: bijective ticket anonymisation, OTP voting (<a href="https://soiree.eduboost.tg" target="_blank" rel="noopener">soiree.eduboost.tg</a>), tireur selection (central admin), public draw (<a href="https://tirage.eduboost.tg" target="_blank" rel="noopener">tirage.eduboost.tg</a>)</li>
-                    <li>Built a multi-client <strong>Quiz App</strong> (Nuxt.js / Hono.js / Deno.js); maintained <strong>SuiSco My Account</strong> (PHP Laravel); integrated centralized <strong>Keycloak SSO</strong> (OAuth2/OIDC)</li>
+                    <li data-i18n="exp1">Architected and built <strong>EduBoost</strong> (<a href="https://www.eduboost.tg" target="_blank" rel="noopener">eduboost.tg</a>), a national multi-channel lottery platform (web, SMS, USSD, mobile money MIXX/VAS) - live in production in Togo with 7 apps across 3 public domains</li>
+                    <li data-i18n="exp2">Designed the distributed architecture: <strong>15 Django write endpoints</strong> generating collision-free ticket codes (<code>SERVER_ID</code> + PostgreSQL sequence), plus <strong>1 central node</strong> for aggregated reads, draws and corporate accounts</li>
+                    <li data-i18n="exp3">Implemented <strong>Celery ~500 ms sync</strong> of local tickets to central PostgreSQL, crash-recovery task (30 s), HMAC-SHA256 operator webhook verification; async web generation (<code>request_id</code> polling) and synchronous SMS/USSD generation (&lt;50 ms)</li>
+                    <li data-i18n="exp4">Developed the corporate gifting portal <strong>Offrir</strong>: PDF generation, SMS/email OTP, secured claim flow, dual-proxy frontend routing</li>
+                    <li data-i18n="exp5">Built the <strong>4-phase live draw</strong>: bijective ticket anonymisation, OTP voting (<a href="https://soiree.eduboost.tg" target="_blank" rel="noopener">soiree.eduboost.tg</a>), tireur selection (central admin), public draw (<a href="https://tirage.eduboost.tg" target="_blank" rel="noopener">tirage.eduboost.tg</a>)</li>
+                    <li data-i18n="exp6">Built a multi-client <strong>Quiz App</strong> (Nuxt.js / Hono.js / Deno.js); maintained <strong>SuiSco My Account</strong> (PHP Laravel); integrated centralized <strong>Keycloak SSO</strong> (OAuth2/OIDC)</li>
                   </ul>
                   <div class="timeline-tags">
                     <span>Django 6</span><span>Nuxt 3</span><span>Celery</span><span>PostgreSQL 17</span><span>Redis</span><span>Docker</span><span>Laravel</span><span>Keycloak</span>
@@ -610,6 +611,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="i18n.js"></script>
   <script>
     (function () {
       var root = document.documentElement;
@@ -637,7 +639,7 @@
       overlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
 
       // ---------- Split text into chars / words ----------
-      document.querySelectorAll('[data-split]').forEach(function (el) {
+      function splitEl(el) {
         var mode = el.getAttribute('data-split');
         var idx = 0;
         function wrap(node) {
@@ -663,7 +665,91 @@
         wrap(el);
         el.querySelectorAll('.char, .word').forEach(function (s) { s.setAttribute('aria-hidden', 'true'); });
         el.classList.add('is-split');
-      });
+      }
+      document.querySelectorAll('[data-split]').forEach(splitEl);
+
+      // ---------- Language (EN / FR) ----------
+      var FR = window.I18N_FR || { text: {}, html: {}, meta: {} };
+      var lang = 'en';
+      var textNodes = [], attrEls = [], htmlEls = [];
+      var norm = function (s) { return s.replace(/\s+/g, ' ').trim(); };
+      var ATTRS = ['aria-label', 'placeholder', 'alt'];
+
+      // collect translatable nodes once, remembering the English original
+      (function collect() {
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (n) {
+            var el = n.parentElement;
+            if (!el || el.closest('script, style, [data-i18n], [data-split], .menu-full')) return NodeFilter.FILTER_REJECT;
+            return norm(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+          }
+        });
+        var n;
+        while ((n = walker.nextNode())) textNodes.push({ node: n, en: n.nodeValue });
+        document.querySelectorAll('[aria-label], [placeholder], [alt]').forEach(function (el) {
+          if (el.id === 'langToggle' || el.closest('[data-split]')) return;
+          ATTRS.forEach(function (a) { if (el.hasAttribute(a)) attrEls.push({ el: el, a: a, en: el.getAttribute(a) }); });
+        });
+        document.querySelectorAll('[data-i18n]').forEach(function (el) { htmlEls.push({ el: el, key: el.getAttribute('data-i18n'), en: el.innerHTML }); });
+      })();
+
+      function tr(str) { return lang === 'fr' && FR.text[norm(str)] ? FR.text[norm(str)] : str; }
+      window.i18nT = function (str) { return lang === 'fr' && FR.text[str] ? FR.text[str] : str; };
+
+      function applyLang(next) {
+        lang = next;
+        document.documentElement.lang = next;
+
+        textNodes.forEach(function (t) {
+          var key = norm(t.en), fr = FR.text[key];
+          if (next === 'fr' && fr) {
+            var lead = (t.en.match(/^\s*/) || [''])[0], trail = (t.en.match(/\s*$/) || [''])[0];
+            t.node.nodeValue = lead + fr + trail;
+          } else { t.node.nodeValue = t.en; }
+        });
+        attrEls.forEach(function (x) {
+          var fr = FR.text[norm(x.en)];
+          x.el.setAttribute(x.a, next === 'fr' && fr ? fr : x.en);
+        });
+        htmlEls.forEach(function (x) {
+          x.el.innerHTML = next === 'fr' && FR.html[x.key] ? FR.html[x.key] : x.en;
+        });
+        // split elements (menu links, section titles): re-split with the new text
+        document.querySelectorAll('[data-split]').forEach(function (el) {
+          if (el.classList.contains('hero-name')) return;
+          if (!el.dataset.en) el.dataset.en = el.getAttribute('aria-label');
+          var fr = FR.text[el.dataset.en];
+          el.textContent = next === 'fr' && fr ? fr : el.dataset.en;
+          splitEl(el);
+        });
+
+        // page meta, CV link and the toggle button itself
+        var m = FR.meta, set = function (sel, attr, v) { var e = document.querySelector(sel); if (e && v) e.setAttribute(attr, v); };
+        if (!window.__metaEn) window.__metaEn = {
+          title: document.title,
+          description: document.querySelector('meta[name="description"]').content,
+          ogt: document.querySelector('meta[property="og:title"]').content,
+          ogd: document.querySelector('meta[property="og:description"]').content
+        };
+        var M = next === 'fr' ? m : window.__metaEn;
+        document.title = M.title;
+        set('meta[name="description"]', 'content', M.description);
+        set('meta[property="og:title"]', 'content', M.ogt);
+        set('meta[property="og:description"]', 'content', M.ogd);
+        document.querySelectorAll('a[href^="cv_gabiam"]').forEach(function (a) {
+          a.setAttribute('href', next === 'fr' ? 'cv_gabiam_fr.pdf?v=3' : 'cv_gabiam.pdf?v=3');
+        });
+        var btn = document.getElementById('langToggle');
+        btn.querySelector('span').textContent = next === 'fr' ? 'EN' : 'FR';
+        btn.setAttribute('aria-label', next === 'fr' ? 'Switch to English' : 'Passer en fran?ais');
+        try { localStorage.setItem('lang', next); } catch (e) {}
+      }
+
+      document.getElementById('langToggle').addEventListener('click', function () { applyLang(lang === 'fr' ? 'en' : 'fr'); });
+      var savedLang = null;
+      try { savedLang = localStorage.getItem('lang'); } catch (e) {}
+      if (!savedLang) savedLang = /^fr/i.test(navigator.language || '') ? 'fr' : 'en';
+      if (savedLang === 'fr') applyLang('fr');
 
       // ---------- Scroll reveal ----------
       var targets = document.querySelectorAll('[data-animate], .reveal, .is-split, .skill-bar');
@@ -756,7 +842,7 @@
         const originalHTML = btn?.innerHTML;
 
         if (btn) {
-          btn.innerHTML = '<span>Sending...</span>';
+          btn.innerHTML = '<span>' + i18nT('Sending...') + '</span>';
           btn.disabled = true;
         }
         if (statusEl) statusEl.className = 'form-status';
@@ -771,7 +857,7 @@
 
           if (res.ok) {
             if (statusEl) {
-              statusEl.textContent = 'Message sent! I will get back to you as soon as possible.';
+              statusEl.textContent = i18nT('Message sent! I will get back to you as soon as possible.');
               statusEl.className = 'form-status success';
             }
             contactForm.reset();
@@ -781,7 +867,7 @@
           }
         } catch {
           if (statusEl) {
-            statusEl.textContent = 'Sending failed. Contact me directly: gabiam.k.samuel@gmail.com';
+            statusEl.textContent = i18nT('Sending failed. Contact me directly: gabiam.k.samuel@gmail.com');
             statusEl.className = 'form-status error';
           }
         } finally {
