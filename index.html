@@ -443,9 +443,98 @@
             </div>
           </article>
 
+          <article class="project-card project-card--featured reveal">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-number">03</div>
+                <div class="project-badges">
+                  <span class="project-badge project-badge--live">&#9679; Open Source</span>
+                  <span class="project-badge">Turborepo</span>
+                  <span class="project-badge">Fastify 5</span>
+                  <span class="project-badge">Next.js 15</span>
+                </div>
+              </div>
+              <h3>GTEF Platform - Monorepo EdTech &amp; E-Learning (LMS)</h3>
+              <p class="project-org">Global Tech Education Foundation - 2025 - 2026</p>
+              <img src="img/gtef.jpeg" alt="GTEF platform preview" class="project-img project-img--contain" />
+              <p class="project-desc" data-i18n="gtefDesc">Full-stack enterprise EdTech monorepo powered by <strong>Turborepo + pnpm</strong>. Powers 3 production applications (public institution portal, complete e-learning LMS, and ERP/CRM management portal) backed by a high-performance <strong>Fastify 5</strong> API and <strong>PostgreSQL (Neon)</strong>. Live at <a href="https://gtef-platform-web.vercel.app/" target="_blank">gtef-platform-web.vercel.app</a>.</p>
+
+              <div class="project-features">
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-layers"></i></span>
+                  <div>
+                    <strong>Turborepo Monorepo Architecture</strong>
+                    <span data-i18n="gtefF1">3 independent applications (<code>apps/web</code>, <code>apps/admin</code>, <code>apps/api</code>) sharing 4 core packages (<code>database</code>, <code>ui</code>, <code>i18n</code>, <code>config</code>) with cached CI builds.</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-lightning-charge"></i></span>
+                  <div>
+                    <strong>Fastify 5 API &amp; Meilisearch</strong>
+                    <span data-i18n="gtefF2">High-throughput REST API with Drizzle ORM, instant full-text search via Meilisearch, and interactive OpenAPI documentation powered by Scalar.</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-award"></i></span>
+                  <div>
+                    <strong>LMS &amp; Automated Cryptographic Certificates</strong>
+                    <span data-i18n="gtefF3">Interactive learning path, quizzes, video player, and dynamic PDF certificate generation with verifiable cryptographic QR codes (<code>pdf-lib</code>).</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-credit-card"></i></span>
+                  <div>
+                    <strong>Multi-Gateway Payments &amp; Cloud Storage</strong>
+                    <span data-i18n="gtefF4">Dual payment integration with Stripe &amp; PayDunya (African Mobile Money), Cloudflare R2 / S3 media storage, and Sentry monitoring.</span>
+                  </div>
+                </div>
+                <div class="project-feature">
+                  <span class="project-feature-icon"><i class="bi bi-check2-circle"></i></span>
+                  <div>
+                    <strong>Shared UI System &amp; E2E Testing</strong>
+                    <span data-i18n="gtefF5">Bilingual design system (FR/EN) built on shadcn/ui and Tailwind CSS 4, validated with Playwright E2E and Vitest unit testing suites.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-metrics">
+                <span>Turborepo</span>
+                <span>Fastify 5</span>
+                <span>Next.js 15</span>
+                <span>React 19</span>
+                <span>Drizzle ORM</span>
+                <span>Neon Postgres</span>
+              </div>
+              <div class="project-tech">
+                <span>TypeScript</span>
+                <span>Turborepo</span>
+                <span>Fastify</span>
+                <span>Next.js 15</span>
+                <span>Tailwind CSS 4</span>
+                <span>Drizzle ORM</span>
+                <span>PostgreSQL</span>
+                <span>Meilisearch</span>
+                <span>Stripe</span>
+                <span>PayDunya</span>
+                <span>Docker</span>
+                <span>Playwright</span>
+              </div>
+              <div class="project-links">
+                <a href="https://gtef-platform-web.vercel.app/" target="_blank" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  gtef-platform-web.vercel.app
+                </a>
+                <a href="https://github.com/Shieldish/gtef-platform" target="_blank" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                  Repository (GitHub)
+                </a>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">03</div>
+              <div class="project-number">04</div>
               <h3>DefiQuiz</h3>
               <p class="project-org">SuiSco Sarl / YAS TOGO - 2025</p>
               <img src="img/defiquiz.png" alt="DefiQuiz platform screenshot" class="project-img" />
@@ -467,7 +556,7 @@
 
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">04</div>
+              <div class="project-number">05</div>
               <h3>SuiSco My Account</h3>
               <p class="project-org">SuiSco Sarl - 2025</p>
               <p class="project-desc">Multi-client web application for account management, built with PHP Laravel and REST APIs.</p>
@@ -482,7 +571,7 @@
 
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">05</div>
+              <div class="project-number">06</div>
               <h3>Centralized SSO</h3>
               <p class="project-org">SuiSco Sarl - 2025</p>
               <p class="project-desc">Centralized Single Sign-On solution with Keycloak (OAuth2/OIDC), reducing authentication overhead across distributed services.</p>
@@ -497,7 +586,7 @@
 
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">06</div>
+              <div class="project-number">07</div>
               <h3>Internship Management Platform</h3>
               <p class="project-org">Djagora - Final Year Project (2024)</p>
               <p class="project-desc">Web platform and mobile app for managing student internship offers, applications and tracking. Built with React and Node.js / MySQL for the web side, React Native for the mobile app.</p>
@@ -522,7 +611,7 @@
 
           <article class="project-card reveal">
             <div class="project-card-inner">
-              <div class="project-number">07</div>
+              <div class="project-number">08</div>
               <h3>Social Data Extraction & Visualization</h3>
               <p class="project-org">DK-Soft - Internship Project (2021)</p>
               <p class="project-desc">Angular application for real-time extraction and visualization of social media data using ELK Stack (Elasticsearch, Logstash, Kibana) and external APIs.</p>
